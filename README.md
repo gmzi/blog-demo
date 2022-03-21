@@ -40,6 +40,9 @@ try adding or removing posts. Any feedback is very much welcomed.
 
 ## Deploy
 
+- remove `/lib/data.js` from .gitignore.
+- set .env variables for hosting platform. 
+
 Deploy and change local .env variables to the ones provided by domain. Vercel was fast, nice and easy in my experience. 
 
 
