@@ -195,7 +195,7 @@ export default function AddPostForm() {
                         </form>
                     )}
                 </section>
-                <div className={styles.backToHome}>
+                <div>
                     <Link href='/admin/dashboard'>
                         <a>← {text.addPostForm.goDashboard}</a>
                     </Link>

@@ -31,6 +31,9 @@ export default function EditPost({ post }) {
             setStatus({ alert: "bodyAlert", message: `${text.editPost.noModifications}` })
             return
         }
+
+        setStatus({ alert: "messageAlert", message: `${text.editPost.savingChanges}` })
+
         const newData = {
             id: post.id,
             fileName: post.fileName,
@@ -58,23 +61,30 @@ export default function EditPost({ post }) {
 
     if (session) {
         return (
-            <Layout home dashboard >
-                <Header />
+            <Layout home >
                 <Head>
                     <title>{data.title} - {text.editPost.editPost} </title>
                 </Head>
-                {status ? (
-                    <>
-                        <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
-                        <div className={styles.btnContainer}>
-                            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                            <a href="/"> {text.editPost.refreshIndex} </a>
-                        </div>
-                    </>
-                ) : (
-                    <Editor body={post.body} id={post.id} updatePost={updatePost} />
-                )
-                }
+                <Header />
+                <section>
+                    {status ? (
+                        <>
+                            <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
+                            <div className={styles.btnContainer}>
+                                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                                <a href="/"> {text.editPost.refreshIndex} </a>
+                            </div>
+                        </>
+                    ) : (
+                        <Editor body={post.body} id={post.id} updatePost={updatePost} />
+                    )
+                    }
+                </section>
+                <div>
+                    <Link href='/admin/dashboard'>
+                        <a>← {text.addPostForm.goDashboard}</a>
+                    </Link>
+                </div>
             </Layout>
         )
     }

@@ -67,7 +67,8 @@
             "editPost": "editar post",
             "refreshIndex": "refrescar index",
             "noModifications": "no hay cambios",
-            "changesHaveBeenSaved": "cambios guardados"
+            "changesHaveBeenSaved": "cambios guardados",
+            "savingChanges": "guardando los cambios... "
         },
         "date": {
             "date": "dd/LLLL/yyyy",
@@ -173,7 +174,8 @@
             "editPost": "edit post",
             "refreshIndex": "refresh index page",
             "noModifications": "no modifications made",
-            "changesHaveBeenSaved": "changes have been saved"
+            "changesHaveBeenSaved": "changes have been saved",
+            "savingChanges": "saving changes... "
         },
         "date": {
             "date": "LLLL/dd/yyyy",

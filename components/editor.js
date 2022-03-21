@@ -72,10 +72,6 @@ export default function Editor({ body, id, updatePost }) {
 
     const handleChange = (e) => {
         setUnsavedChanges(true)
-        // localStorage.setItem(
-        //     `blogText-${id}`,
-        //     JSON.stringify(e)
-        // );
         setValue(e)
     }
 
