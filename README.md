@@ -13,7 +13,7 @@ try adding or removing posts. Any feedback is very much welcomed.
     - `git remote add instance <instance_url>`
     - stage and commit local changes.
     - `git push -u instance <branchName>` push to remote instance only. 
-    - `git pull <master remote name> <master remote branch>` pull changes from template. 
+    - `git pull origin master` pull changes from template. 
 2. `npm install` packages. 
 3. Define .env variables:
     - Create an .env.local file, and replace "value" with your own values:
