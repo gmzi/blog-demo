@@ -1,0 +1,214 @@
+{
+    "ES": {
+        "index": {
+            "by": "por"
+        },
+        "header": {
+            "signInAs": "ingresar como editor",
+            "signIn": "ingresar",
+            "signedInAs": "logueado como",
+            "editor": "editor",
+            "signOut": "salir"
+        },
+        "auth": {
+            "password": "Contraseña"
+        },
+        "dashboard": {
+            "dashboard": "Tablero",
+            "updatingData": "actualizando...",
+            "newPost": "Post Nuevo",
+            "uploadFile": "Cargar archivo",
+            "writeInEditor": "Escribir en el editor",
+            "previousPosts": "Posts Anteriores",
+            "noPosts": "No hay posts",
+            "by": "por",
+            "visits": "Visitas",
+            "download": "Descargar",
+            "edit": "Editar",
+            "delete": "Eliminar",
+            "deletingPost": "eliminando post...",
+            "failedToDelete": "no se pudo eliminar",
+            "failedToReset": "no se pudo resetear el contador"
+        },
+        "logoAdmin": {
+            "dashboard": "tablero"
+        },
+        "alert": {
+            "resetCounter": "Resetear el contador?",
+            "thisAction": "el contador volverá a estar en 0",
+            "cancel": "cancelar",
+            "reset": "resetear",
+            "deleteCannot": "La eliminación no se puede deshacer",
+            "youMight": "tal vez quieras descargar una copia de este post, para tener por las dudas",
+            "downloadPost": "Descargar post",
+            "deletePost": "Eliminar post",
+            "ok": "ok"
+        },
+        "writePost": {
+            "loading": "Cargando el editor...",
+            "title": "# Título",
+            "writePost": "Escribir post",
+            "newPost": "Nuevo post",
+            "publish": "publicar",
+            "goDashboard": "Tablero",
+            "missingTitle": "falta el título, por favor agrega '# Tu Título' al comienzo del post",
+            "titleExists": "Ya existe un posteo con este título",
+            "noText": "Tu posteo no tiene texto",
+            "errorFormatting": "error formateando data",
+            "publishing": "publicando...",
+            "postPublished": "post publicado, felicitaciones!!!!"
+        },
+        "editor": {
+            "loading": "Cargando el editor...",
+            "saveChanges": "Guardar cambios",
+            "youHaveUnsaved": "Tienes cambios sin guardar, seguro que quieres salir de esta página?"
+        },
+        "editPost": {
+            "editPost": "editar post",
+            "refreshIndex": "refrescar index",
+            "noModifications": "no hay cambios",
+            "changesHaveBeenSaved": "cambios guardados"
+        },
+        "date": {
+            "date": "dd/LLLL/yyyy",
+            "locale": "es"
+        },
+        "layout": {
+            "comment": "comentar",
+            "home": "inicio"
+        },
+        "posts": {
+            "notes": "Notas"
+        },
+        "addPostForm": {
+            "addPost": "crear post",
+            "createNew": "Crear post",
+            "guidelinesTitle": "Los posts se generan a partir de archivos .md, por favor sigue esta guía para adjuntar el tuyo:",
+            "li1": "El título del post debe ir en la primera línea. Ejemplo: ",
+            "li2": "Por favor fíjate que no queden líneas en blanco antes del título del post",
+            "image": "Imagen",
+            "template": "ejemplo de sintaxis",
+            "myImage": "mi-imagen",
+            "myVideo": "Título del video",
+            "cheatSheet": "Guía de sintaxis para archivos Markdown",
+            "downloadSample": "Descarga un archivo .md de muestra",
+            "authorName": "nombre del autor",
+            "authorPlaceholder": "nombre del autor tal como será mostrado en página",
+            "file": "archivo a publicar",
+            "preview": "vista previa",
+            "goDashboard": "inicio",
+            "fillAuthorName": "no olvides poner el nombre del autor",
+            "attach": "no olvides adjuntar tu archivo",
+            "titleDuplicate": "Ya tienes un post con el mismo título, por favor edita tu archivo y adjúntalo de nuevo",
+            "errorFormatting": "Error formateando datos, por favor revisa tu archivo e inténtalo de nuevo",
+            "postPublished": "Post publicado, felicitaciones!!!!",
+            "failedPublishing": "Error al intentar publicar, por favor edita tu archivo e intenta de nuevo"
+        }
+    },
+    "EN": {
+        "index": {
+            "by": "by"
+        },
+        "header": {
+            "signInAs": "sign in as editor",
+            "signIn": "sign in",
+            "signedInAs": "signed in as",
+            "editor": "editor",
+            "signOut": "sign out"
+        },
+        "auth": {
+            "password": "Password"
+        },
+        "dashboard": {
+            "dashboard": "Dashboard",
+            "updatingData": "updating data...",
+            "newPost": "New Post",
+            "uploadFile": "Upload File",
+            "writeInEditor": "Write in Editor",
+            "previousPosts": "Previous Posts",
+            "noPosts": "No posts",
+            "by": "by",
+            "visits": "Visits",
+            "download": "Download",
+            "edit": "Edit",
+            "delete": "Delete",
+            "deletingPost": "deleting post...",
+            "failedToDelete": "failed to delete",
+            "failedToReset": "failed to reset counter"
+        },
+        "logoAdmin": {
+            "dashboard": "dashboard"
+        },
+        "alert": {
+            "resetCounter": "Reset Counter?",
+            "thisAction": "this action will reset the counter to 0, this cannot be undone",
+            "cancel": "cancel",
+            "reset": "reset",
+            "deleteCannot": "Delete cannot be undone",
+            "youMight": "you might want to download a copy of this post for your records",
+            "downloadPost": "Download Post",
+            "deletePost": "Delete Post",
+            "ok": "ok"
+        },
+        "writePost": {
+            "loading": "Loading editor...",
+            "title": "# Title",
+            "writePost": "write post",
+            "newPost": "New Post",
+            "publish": "publish",
+            "goDashboard": "go dashboard",
+            "missingTitle": "missing title, please add '# Your Title' at the top of your text",
+            "titleExists": "The title of your post already exists, please edit your title and try again",
+            "noText": "Your post has no text yet",
+            "errorFormatting": "error formatting data",
+            "publishing": "publishing...",
+            "postPublished": "post published, congratulations!!!!"
+        },
+        "editor": {
+            "loading": "Loading editor...",
+            "saveChanges": "Save changes",
+            "youHaveUnsaved": "You have unsaved changes, are you sure you want to leave this page?"
+        },
+        "editPost": {
+            "editPost": "edit post",
+            "refreshIndex": "refresh index page",
+            "noModifications": "no modifications made",
+            "changesHaveBeenSaved": "changes have been saved"
+        },
+        "date": {
+            "date": "LLLL/dd/yyyy",
+            "locale": "eng"
+        },
+        "layout": {
+            "comment": "comments",
+            "home": "home"
+        },
+        "posts": {
+            "notes": "Notes"
+        },
+        "addPostForm": {
+            "addPost": "add post",
+            "createNew": "Create new post",
+            "guidelinesTitle": "Posts are created from .md files, please follow these guidelines before uploading yours:",
+            "li1": "Main title must go in first line. Example:",
+            "li2": "Please check that there are no blank lines before main title",
+            "image": "Image",
+            "template": "syntax template",
+            "myImage": "my-image",
+            "myVideo": "My video title",
+            "cheatSheet": "Markdown syntax cheat sheet",
+            "downloadSample": "Download sample .md file",
+            "authorName": "author name",
+            "authorPlaceholder": "author name as it will be publicly displayed",
+            "file": "file to post",
+            "preview": "preview",
+            "goDashboard": "go dashboard",
+            "fillAuthorName": "please fill author name",
+            "attach": "please attach file",
+            "titleDuplicate": "The title of your post already exists, please edit your attached file and try again",
+            "errorFormatting": "Error formatting data, please check guidelines and try again",
+            "postPublished": "Post published, congratulations!!!!",
+            "failedPublishing": "Failed publishing, please edit file and try again"
+        }
+    }
+}

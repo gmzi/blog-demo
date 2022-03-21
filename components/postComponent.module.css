@@ -1,0 +1,19 @@
+.post {
+    position: relative;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 .30rem .3rem rgba(0,0,0,.15),inset 0 .1rem .2rem #fff,inset 0 -.1rem .1rem rgba(0,0,0,.05);
+}
+
+.post pre {
+    background-color: rgb(240, 234, 234);
+    border-radius: 5px;
+    padding: .5rem;
+}
+
+.post a {
+    color: rgb(0, 0, 173);
+}
