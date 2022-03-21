@@ -9,8 +9,13 @@ try adding or removing posts. Any feedback is very much welcomed.
 
 ## Usage
 
-1. `npm install` packages. 
-2. Define .env variables:
+1. Clone repo and config your instance:
+    - `git remote add instance <instance_url>`
+    - stage and commit local changes.
+    - `git push -u instance <branchName>` push to remote instance only. 
+    - `git pull <master remote name> <master remote branch>` pull changes from template. 
+2. `npm install` packages. 
+3. Define .env variables:
     - Create an .env.local file, and replace "value" with your own values:
         MONGODB_URI=value
         MONGODB_DB=value
@@ -30,8 +35,8 @@ try adding or removing posts. Any feedback is very much welcomed.
         NEXTAUTH_URL=http://localhost:3000
         BASE_URL=http://localhost:3000
         NEXT_PUBLIC_URL=http://localhost:3000
-3. Open /lib/data-template.js, add your own values and change file name to `data.js`. 
-4. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run local production build.
+4. Open /lib/data-template.js, add your own values and change file name to `data.js`. 
+5. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run local production build.
 
 ## Deploy
 
