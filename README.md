@@ -12,25 +12,25 @@ try adding or removing posts. Any feedback is very much welcomed.
 1. `npm install` packages. 
 2. Define .env variables:
     - Create an .env.local file, and replace "value" with your own values:
-        1. Auth cycle:
-            - UPLOAD_PASSWORD=my_password_1
-            - LOGIN_PASSWORD=my_password_1
-            - NEXTAUTH_SECRET=my_password_1
-            - REVALIDATE_TOKEN=value
-            - USER_TOKEN=value
-            - NEXT_PUBLIC_SAVE_TOKEN=my_value_1
-            - SAVE_TOKEN=my_value_1*must match NEXT_PUBLIC_SAVE_TOKEN*
-        2. MongoDB (create a db [here](https://www.mongodb.com/atlas/database)). Add to .env.local:
-            - MONGODB_URI=value
-            - MONGODB_DB=value
-            - MONGODB_COLLECTION=value
-        3. Add these to .local.env (I promise to refactor these soon):
-            - NEXT_PUBLIC_BASE_URL=http://localhost:3000/api
-            - NEXTAUTH_URL=http://localhost:3000
-            - BASE_URL=http://localhost:3000
-            - NEXT_PUBLIC_URL=http://localhost:3000
-            - NEXT_PUBLIC_CHAT_URL=http://your-chat-preferred-server
-3. Open /lib/data.js and update it with your own values. 
+        MONGODB_URI=value
+        MONGODB_DB=value
+        MONGODB_COLLECTION=value
+
+        NEXT_PUBLIC_SAVE_TOKEN=value_1
+        SAVE_TOKEN=value_1
+
+        UPLOAD_PASSWORD=value_2
+        LOGIN_PASSWORD=value_2
+        NEXTAUTH_SECRET=value_2
+        REVALIDATE_TOKEN=value
+        USER_TOKEN=value
+
+
+        NEXT_PUBLIC_BASE_URL=http://localhost:3000/api
+        NEXTAUTH_URL=http://localhost:3000
+        BASE_URL=http://localhost:3000
+        NEXT_PUBLIC_URL=http://localhost:3000
+3. Open /lib/data-template.js, add your own values and change file name to `data.js`. 
 4. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run local production build.
 
 ## Deploy
