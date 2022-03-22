@@ -39,7 +39,8 @@
     padding: .5rem .5rem;
   }
 
-.form input {
+.form input, 
+.form textarea {
     background: #fff;
     border: 1px solid #bbb;
     border-radius: 0.3rem;
@@ -48,6 +49,8 @@
     font-size: 1rem;
     padding: .5rem 1rem;
     width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
 }
 
 .buttonPreviewContainer {

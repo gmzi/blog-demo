@@ -72,6 +72,7 @@ export default function Editor({ post, updatePost }) {
     const handleFormChange = (e) => {
         const authorName = e.target.form.author.value;
         const description = e.target.form.description.value;
+        setUnsavedChanges(true)
         setAuthorName(authorName)
         setDescription(description)
     }
@@ -107,7 +108,7 @@ export default function Editor({ post, updatePost }) {
                             <label htmlFor="author">{text.addPostForm.authorName}</label>
                             <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} value={authorName} />
                             <label htmlFor="description">{text.addPostForm.description}</label>
-                            <input type="textarea" name="description" placeholder={text.addPostForm.descriptionPlaceholder} value={description} />
+                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
                         </form>
                         <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
                             previewOptions={{

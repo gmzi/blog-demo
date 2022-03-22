@@ -38,7 +38,12 @@ const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 export default function WritePost() {
     const { data: session } = useSession()
 
-    const [value, setValue] = useState(`${text.writePost.title} \n ${text.writePost.body}`);
+    const textGuides = {
+        title: text.writePost.title,
+        body: text.writePost.body
+    }
+
+    const [value, setValue] = useState(`${textGuides.title} \n ${textGuides.body}`);
     const [authorName, setAuthorName] = useState()
     const [description, setDescription] = useState()
     const [status, setStatus] = useState();
@@ -90,8 +95,8 @@ export default function WritePost() {
 
         const rawData = {
             fileContent: value,
-            authorName: authorName || "Default Author",
-            description: description,
+            authorName: authorName || "Default",
+            description: description || ""
         }
 
         const format = await fetch(`${BASE_URL}/format-data`, {
@@ -106,9 +111,7 @@ export default function WritePost() {
 
         if (!format.ok) {
             if (format.status === 409) {
-
                 const errorMsg = await format.json();
-                console.log(errorMsg.title)
                 if (errorMsg.title === "missing") {
                     setStatus({ alert: "bodyAlert", message: `${text.writePost.missingTitle}` })
                     return
@@ -173,9 +176,9 @@ export default function WritePost() {
                             <div>
                                 <form className={addPostStyles.form} onChange={handleFormChange} encType="multipart/form-data">
                                     <label htmlFor="author">{text.addPostForm.authorName}</label>
-                                    <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} value={authorName} />
+                                    <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
                                     <label htmlFor="description">{text.addPostForm.description}</label>
-                                    <input type="textarea" name="description" placeholder={text.addPostForm.descriptionPlaceholder} value={description} />
+                                    <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
                                 </form>
                                 <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
                                     previewOptions={{

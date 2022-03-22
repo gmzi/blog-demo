@@ -63,7 +63,7 @@ export default function EditPost({ post }) {
 
     if (session) {
         return (
-            <Layout home >
+            <Layout home dashboard>
                 <Head>
                     <title>{data.title} - {text.editPost.editPost} </title>
                 </Head>

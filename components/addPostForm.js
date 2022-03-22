@@ -195,7 +195,7 @@ export default function AddPostForm() {
                             <label htmlFor="author">{text.addPostForm.authorName}</label>
                             <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
                             <label htmlFor="description">{text.addPostForm.description}</label>
-                            <input type="textarea" name="description" placeholder={text.addPostForm.descriptionPlaceholder} />
+                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} />
                             <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
                             <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
                             <div className={styles.buttonPreviewContainer}>
