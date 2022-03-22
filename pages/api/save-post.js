@@ -54,26 +54,27 @@ export default async function handler(req, res) {
         // save object in db
         const { db } = await connectToDatabase()
 
-        // TOP POST QTTY:
-        // const query = {}
-        // const sort = { date: -1, _id: 1 }
+        // TOP POST QTTY to 15:
+        const query = {}
+        const sort = { date: -1, _id: 1 }
 
-        // const allPosts = await db
-        //     .collection(MONGODB_COLLECTION)
-        //     .find(query)
-        //     .sort(sort)
-        //     .toArray();
+        const allPosts = await db
+            .collection(MONGODB_COLLECTION)
+            .find(query)
+            .sort(sort)
+            .toArray();
 
 
-        // if (allPosts.length) {
-        //     const maxPosts = 15;
-        //     if (allPosts.length >= maxPosts) {
-        //         const postToDelete = { _id: allPosts[allPosts.length - 1]._id }
-        //         const deletePost = await db
-        //             .collection(MONGODB_COLLECTION)
-        //             .deleteOne(postToDelete)
-        //     }
-        // }
+        // TOP POST QTTY to 15 posts:
+        if (allPosts.length) {
+            const maxPosts = 15;
+            if (allPosts.length >= maxPosts) {
+                const postToDelete = { _id: allPosts[allPosts.length - 1]._id }
+                const deletePost = await db
+                    .collection(MONGODB_COLLECTION)
+                    .deleteOne(postToDelete)
+            }
+        }
 
         const insertPost = await db
             .collection(MONGODB_COLLECTION)
