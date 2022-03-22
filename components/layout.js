@@ -7,23 +7,47 @@ import Footer from './Footer'
 import { data, text } from '../lib/data'
 
 const BASE_URL = process.env.BASE_URL
+const URL = process.env.NEXT_PUBLIC_URL;
 
-export default function Layout({ children, home, dashboard }) {
+export default function Layout({ children, home, post, dashboard }) {
 
     return (
         <>
             <Head>
-                <meta httpEquiv='Content-Language' content={data.language} />
-                <link rel="icon" href="/favicon.ico" />
-                <meta name="description" content={data.description} />
-                {/* OpenGraph */}
-                <meta property="og:site_name" content={data.name} />
-                <meta property="og:description" content={data.description} />
-                <meta property="og:image" content={data.ogImage} />
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:description" content={data.description} />
-                <meta name="twitter:image" content={data.ogImage} />
+                {post ? (
+                    <>
+                        {/* Base meta tags */}
+                        <meta httpEquiv='Content-Language' content={data.language} />
+                        <link rel="icon" href="/favicon.ico" />
+                        {/* OpenGraph */}
+                        <meta property="og:site_name" content={data.name} />
+                        <meta property="og:image" content={data.ogImage} />
+                        {/* Twitter */}
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:image" content={data.ogImage} />
+                    </>
+
+                ) : (
+                    <>
+                        {/* Base meta tags */}
+                        <meta httpEquiv='Content-Language' content={data.language} />
+                        <link rel="icon" href="/favicon.ico" />
+                        <meta name="title" content={data.title} />
+                        <meta name="description" content={data.description} />
+                        {/* OpenGraph */}
+                        <meta property="og:site_name" content={data.name} />
+                        <meta property="og:title" content={data.title} />
+                        <meta property="og:description" content={data.description} />
+                        <meta property="og:image" content={data.ogImage} />
+                        <meta property="og:url" content={URL} />
+                        {/* Twitter */}
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:title" content={data.title} />
+                        <meta name="twitter:description" content={data.description} />
+                        <meta name="twitter:image" content={data.ogImage} />
+                    </>
+                )}
+
             </Head>
             <nav className={styles.nav}>
                 {dashboard ? (

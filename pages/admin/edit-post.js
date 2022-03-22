@@ -26,8 +26,8 @@ export default function EditPost({ post }) {
         setStatus(null)
     }
 
-    const updatePost = async (newText) => {
-        if (newText === post.body) {
+    const updatePost = async (newText, newAuthorName, newDescription) => {
+        if (newText === post.body && newAuthorName === post.authorName && newDescription === post.description) {
             setStatus({ alert: "bodyAlert", message: `${text.editPost.noModifications}` })
             return
         }
@@ -38,6 +38,8 @@ export default function EditPost({ post }) {
             id: post.id,
             fileName: post.fileName,
             newText: newText,
+            newAuthorName: newAuthorName,
+            newDescription: newDescription
         }
 
         const response = await fetch(`${BASE_URL}/update-post`, {
@@ -76,7 +78,8 @@ export default function EditPost({ post }) {
                             </div>
                         </>
                     ) : (
-                        <Editor body={post.body} id={post.id} updatePost={updatePost} />
+                        // <Editor body={post.body} id={post.id} authorName={post.authorName} description={post.description} updatePost={updatePost} />
+                        <Editor post={post} updatePost={updatePost} />
                     )
                     }
                 </section>
@@ -113,14 +116,15 @@ export async function getServerSideProps({ query }) {
     }
 
     const result = {
-        author: post.author,
+        authorName: post.author,
         date: post.date,
         title: post.title,
         id: post._id,
         contentHtml: post.contentHtml,
         body: post.body,
         fileName: post.fileName,
-        visits: post.visits
+        visits: post.visits,
+        description: post.description
     }
 
     return {

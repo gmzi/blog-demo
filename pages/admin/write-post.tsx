@@ -39,8 +39,8 @@ export default function WritePost() {
     const { data: session } = useSession()
 
     const [value, setValue] = useState(`${text.writePost.title} \n ${text.writePost.body}`);
-    const [authorName, setAuthorName] = useState('')
-    const [description, setDescription] = useState('')
+    const [authorName, setAuthorName] = useState()
+    const [description, setDescription] = useState()
     const [status, setStatus] = useState();
     const [published, setPublished] = useState();
 

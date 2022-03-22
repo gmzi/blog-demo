@@ -38,6 +38,8 @@ export default async function handler(req, res) {
             $set: {
                 contentHtml: newContentHtml,
                 body: req.body.newText,
+                author: req.body.newAuthorName,
+                description: req.body.newDescription
             }
         }
 

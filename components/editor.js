@@ -9,6 +9,7 @@ import { grabText } from "../lib/grabText";
 import Alert from './alert'
 import styles from '../styles/dashboard.module.css'
 import utilStyles from '../styles/utils.module.css'
+import addPostStyles from './addPostForm.module.css'
 import { useRouter } from "next/router";
 
 
@@ -31,9 +32,10 @@ const MDEditor = dynamic(
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
-export default function Editor({ body, id, updatePost }) {
-
-    const [value, setValue] = useState(body);
+export default function Editor({ post, updatePost }) {
+    const [value, setValue] = useState(post.body);
+    const [authorName, setAuthorName] = useState(post.authorName)
+    const [description, setDescription] = useState(post.description)
     const [status, setStatus] = useState();
     const [published, setPublished] = useState();
     const router = useRouter()
@@ -67,6 +69,12 @@ export default function Editor({ body, id, updatePost }) {
     }, [unsavedChanges]);
 
 
+    const handleFormChange = (e) => {
+        const authorName = e.target.form.author.value;
+        const description = e.target.form.description.value;
+        setAuthorName(authorName)
+        setDescription(description)
+    }
 
 
 
@@ -82,7 +90,7 @@ export default function Editor({ body, id, updatePost }) {
 
     const handleUpdate = () => {
         setUnsavedChanges(false)
-        updatePost(value)
+        updatePost(value, authorName, description)
     }
 
     return (
@@ -95,6 +103,12 @@ export default function Editor({ body, id, updatePost }) {
                         <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                     ) : null}
                     <div>
+                        <form className={addPostStyles.form} onChange={handleFormChange} encType="multipart/form-data">
+                            <label htmlFor="author">{text.addPostForm.authorName}</label>
+                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} value={authorName} />
+                            <label htmlFor="description">{text.addPostForm.description}</label>
+                            <input type="textarea" name="description" placeholder={text.addPostForm.descriptionPlaceholder} value={description} />
+                        </form>
                         <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
                             previewOptions={{
                                 rehypePlugins: [[rehypeSanitize]]

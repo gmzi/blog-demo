@@ -19,18 +19,8 @@ export default function Home({ posts }) {
   return (
     <Layout home>
       <Head>
-        {/* Base meta tags */}
-        <meta name="description" content={data.description} />
-        <meta name="title" content={data.title} />
         {/* OpenGraph */}
-        <meta property="og:description" content={data.description} />
-        <meta property="og:image" content={data.ogImage} />
-        <meta property="og:site_name" content={data.name} />
-        <meta property="og:title" content={data.title} />
         <meta property="og:type" content="index" />
-        <meta property="og:url" content={URL} />
-        {/* Twitter */}
-        <meta name="twitter:title" content={data.title} />
 
         <title>{data.title}</title>
       </Head>
