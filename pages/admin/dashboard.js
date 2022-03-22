@@ -146,7 +146,7 @@ export default function Dashboard({ posts }) {
                 <Head>
                     <title>{data.title}-{text.dashboard.dashboard}</title>
                 </Head>
-                <h2>{text.dashboard.dashboard}</h2>
+                <h1>{text.dashboard.dashboard}</h1>
                 {
                     isRefreshing ? (
                         <p>{text.dashboard.updatingData}</p>
