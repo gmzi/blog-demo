@@ -4,7 +4,7 @@ to create a new post, without the need to access the file system. When a file is
 removed from the dashboard, an on-demand incremental static regeneration is triggered, and the site 
 rebuilds automatically. 
 
-Here's a [live demo](https://blog-d.vercel.app), password is already added as value, please
+Here's a [live demo](https://blog-gmzi.vercel.app), password is already added as value, please
 try adding or removing posts. Any feedback is very much welcomed.
 
 ## Usage
