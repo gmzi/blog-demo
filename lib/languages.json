@@ -109,6 +109,18 @@
             "errorFormatting": "Error formateando datos, por favor revisa tu archivo e inténtalo de nuevo",
             "postPublished": "Post publicado, felicitaciones!!!!",
             "failedPublishing": "Error al intentar publicar, por favor edita tu archivo e intenta de nuevo"
+        },
+        "previewPost": {
+            "refreshIndex": "refrescar página de inicio",
+            "preview": "BORRADOR: ",
+            "thisIs": "este es el borrador de tu post",
+            "promptPublish": "Todo bien?",
+            "publish": "PUBLICAR",
+            "promptStartOver": "Necesita edición?",
+            "startOver": "EMPEZAR DE NUEVO",
+            "indexEntry": "Así se ve en el índice:",
+            "by": "por",
+            "description": "descripción"
         }
     },
     "EN": {
@@ -221,6 +233,18 @@
             "errorFormatting": "Error formatting data, please check guidelines and try again",
             "postPublished": "Post published, congratulations!!!!",
             "failedPublishing": "Failed publishing, please edit file and try again"
+        },
+        "previewPost": {
+            "refreshIndex": "refresh index page",
+            "preview": "PREVIEW: ",
+            "thisIs": "this is a preview of your post",
+            "promptPublish": "Looking good?",
+            "publish": "PUBLISH",
+            "promptStartOver": "Need some edit?",
+            "startOver": "START OVER",
+            "indexEntry": "Index entry:",
+            "by": "by",
+            "description": "description"
         }
     }
 }

@@ -6,6 +6,7 @@ import utilStyles from '../styles/utils.module.css'
 import dashboardStyles from '../styles/dashboard.module.css'
 import Alert from './alert';
 import PostComponent from './postComponent';
+import { text } from '../lib/data'
 
 // import { parseMdToHtml } from "../lib/posts";
 
@@ -38,7 +39,7 @@ export default function PreviewPost({ post, publish, restart, publishStatus }) {
                 <Layout dashboard home>
                     <Alert data={alert} cancelDeletion={null} downloadFile={null} deletePost={null} />
                     {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                    <a href="/">refresh index page</a>
+                    <a href="/">{text.previewPost.refreshIndex}</a>
                 </Layout>
             </>
         )
@@ -48,30 +49,33 @@ export default function PreviewPost({ post, publish, restart, publishStatus }) {
         <section className={styles.section}>
             <Layout dashboard home>
                 <Head>
-                    <title>PREVIEW: {post.title}</title>
+                    <title>{text.previewPost.preview} {post.title}</title>
                 </Head>
                 <div className={styles.container}>
-                    <h3>This is a preview of your post</h3>
-                    <div className={styles.btnContainer}>
-                        <label htmlFor="btn-publish">Looking good?</label>
-                        <button className={dashboardStyles.button} onClick={handlePublish} name="btn-publish">PUBLISH</button>
-                        <label htmlFor="btn-restart">Need some edit?</label>
-                        <button className={dashboardStyles.button} onClick={handleRestart} name="btn-restart">START OVER</button>
+                    <h3>{text.previewPost.thisIs}:</h3>
+                    <div className={styles.articleContainer}>
+                        <PostComponent post={post} />
                     </div>
                 </div>
                 <ul className={styles.list}>
-                    <li className={utilStyles.headingSm}>Index entry:</li>
-                    <li className={styles.listItem}><span>{post.title}</span><span className={styles.lightText}> por {post.author}</span></li>
+                    <li className={utilStyles.headingSm}>{text.previewPost.indexEntry}</li>
+                    <li className={styles.listItem}><span>{post.title}</span><span className={styles.lightText}> {text.previewPost.by} {post.author}</span></li>
                     {post.description &&
                         <>
-                            <li className={utilStyles.headingSm}>Description:</li>
+                            <li className={utilStyles.headingSm}>{text.previewPost.description}: </li>
                             <li className={styles.listItem}><span>{post.description}</span></li>
                         </>
                     }
                 </ul>
-                <div className={styles.articleContainer}>
-                    <PostComponent post={post} />
+                <div className={styles.btnContainer}>
+                    <label htmlFor="btn-publish">{text.previewPost.promptPublish}</label>
+                    <button className={`${dashboardStyles.button} ${dashboardStyles.buttonPublish}`} onClick={handlePublish} name="btn-publish">{text.previewPost.publish}</button>
+                    <label htmlFor="btn-restart">{text.previewPost.promptStartOver}</label>
+                    <button className={`${dashboardStyles.button} ${dashboardStyles.buttonStartOver}`} onClick={handleRestart} name="btn-restart">{text.previewPost.startOver}</button>
                 </div>
+                {/* <div className={styles.articleContainer}>
+                    <PostComponent post={post} />
+                </div> */}
             </Layout >
         </section>
     )
