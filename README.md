@@ -16,31 +16,31 @@ try adding or removing posts. Any feedback is very much welcomed.
     - `git pull origin master` pull changes from template. 
 2. `npm install` packages. 
 3. Define .env variables:
-    - Create an .env.local file, and replace "value" with your own values:
-        MONGODB_URI=value
-        MONGODB_DB=value
-        MONGODB_COLLECTION=value
+    - Create an .env.local file, and replace "value" with your own values:  
+        MONGODB_URI=value  
+        MONGODB_DB=value  
+        MONGODB_COLLECTION=value  
 
-        NEXT_PUBLIC_SAVE_TOKEN=value_1
-        SAVE_TOKEN=value_1
+        NEXT_PUBLIC_SAVE_TOKEN=value_1  
+        SAVE_TOKEN=value_1  
 
-        UPLOAD_PASSWORD=value_2
-        LOGIN_PASSWORD=value_2
-        NEXTAUTH_SECRET=value_2
-        REVALIDATE_TOKEN=value
-        USER_TOKEN=value
+        UPLOAD_PASSWORD=value_2  
+        LOGIN_PASSWORD=value_2  
+        NEXTAUTH_SECRET=value_2  
+        REVALIDATE_TOKEN=value  
+        USER_TOKEN=value  
 
+        NEXT_PUBLIC_BASE_URL=http://localhost:3000/api  
+        NEXTAUTH_URL=http://localhost:3000  
+        BASE_URL=http://localhost:3000  
+        NEXT_PUBLIC_URL=http://localhost:3000  
 
-        NEXT_PUBLIC_BASE_URL=http://localhost:3000/api
-        NEXTAUTH_URL=http://localhost:3000
-        BASE_URL=http://localhost:3000
-        NEXT_PUBLIC_URL=http://localhost:3000
 4. Open /lib/data-template.js, add your own values and change file name to `data.js`. 
 5. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run local production build.
 
 ## Deploy
 
-- remove `/lib/data.js` from .gitignore.
+- Open .gitignore, remove `/lib/data.js`, push changes to repo.
 - set .env variables for hosting platform. 
 
 Deploy and change local .env variables to the ones provided by domain. Vercel was fast, nice and easy in my experience. 

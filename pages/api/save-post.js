@@ -54,7 +54,7 @@ export default async function handler(req, res) {
         // save object in db
         const { db } = await connectToDatabase()
 
-        // TOP POST QTTY:
+        // TOP POST QTTY to 15 posts:
         // const query = {}
         // const sort = { date: -1, _id: 1 }
 
