@@ -16,7 +16,7 @@ try adding or removing posts. Any feedback is very much welcomed.
     - `git pull origin master` pull changes from template. 
 2. `npm install` packages. 
 3. Define .env variables:
-    - Create an .env.local file, and replace "value" with your own values:  
+    - Create an .env.local file, and replace "value" with your own values (mind "value_1" and "value_2" must match):  
         MONGODB_URI=value  
         MONGODB_DB=value  
         MONGODB_COLLECTION=value  
