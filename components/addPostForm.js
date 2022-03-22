@@ -43,9 +43,15 @@ export default function AddPostForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const authorName = e.target.author.value.trim();
+        const description = e.target.description.value.trim();
 
         if (!authorName) {
             setEmptyField({ alert: "messageAlert", message: `${text.addPostForm.fillAuthorName}` })
+            return;
+        }
+
+        if (description.length > 255) {
+            setEmptyField({ alert: "messageAlert", message: `${text.addPostForm.longDescription}` })
             return;
         }
 
@@ -58,6 +64,7 @@ export default function AddPostForm() {
 
         const rawData = {
             authorName: authorName,
+            description: description,
             fileContent: fileContent
         }
 
@@ -187,6 +194,8 @@ export default function AddPostForm() {
                         <form className={styles.form} onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
                             <label htmlFor="author">{text.addPostForm.authorName}</label>
                             <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
+                            <label htmlFor="description">{text.addPostForm.description}</label>
+                            <input type="textarea" name="description" placeholder={text.addPostForm.descriptionPlaceholder} />
                             <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
                             <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
                             <div className={styles.buttonPreviewContainer}>

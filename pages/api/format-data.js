@@ -43,6 +43,7 @@ export default async function handler(req, res) {
         // const date = new Date().toISOString();
         const date = new Date();
         const authorName = req.body.authorName.trim()
+        const description = req.body.description.trim()
         const fileBody = fileContent.split('\n').slice(1).join('\n')
 
         // CHECK FOR EMPTY BODY 
@@ -69,6 +70,7 @@ export default async function handler(req, res) {
             "title": textTitle,
             "date": date,
             "author": authorName,
+            "description": description,
             "fileName": fileName,
             "body": fileBody,
             "contentHtml": contentHtml

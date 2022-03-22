@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             return res.status(403).json({ error: "bad token" })
         }
 
-        const { title, date, author, fileName, body, contentHtml } = req.body;
+        const { title, date, author, description, fileName, body, contentHtml } = req.body;
 
         // CHECK TYPEOF DATA:
         for (let v in req.body) {
@@ -44,6 +44,7 @@ export default async function handler(req, res) {
             title: title,
             date: date,
             author: author,
+            description: description,
             fileName: aptUrl,
             body: body,
             contentHtml: contentHtml,
@@ -53,25 +54,26 @@ export default async function handler(req, res) {
         // save object in db
         const { db } = await connectToDatabase()
 
-        const query = {}
-        const sort = { date: -1, _id: 1 }
+        // TOP POST QTTY:
+        // const query = {}
+        // const sort = { date: -1, _id: 1 }
 
-        const allPosts = await db
-            .collection(MONGODB_COLLECTION)
-            .find(query)
-            .sort(sort)
-            .toArray();
+        // const allPosts = await db
+        //     .collection(MONGODB_COLLECTION)
+        //     .find(query)
+        //     .sort(sort)
+        //     .toArray();
 
 
-        if (allPosts.length) {
-            const maxPosts = 15;
-            if (allPosts.length >= maxPosts) {
-                const postToDelete = { _id: allPosts[allPosts.length - 1]._id }
-                const deletePost = await db
-                    .collection(MONGODB_COLLECTION)
-                    .deleteOne(postToDelete)
-            }
-        }
+        // if (allPosts.length) {
+        //     const maxPosts = 15;
+        //     if (allPosts.length >= maxPosts) {
+        //         const postToDelete = { _id: allPosts[allPosts.length - 1]._id }
+        //         const deletePost = await db
+        //             .collection(MONGODB_COLLECTION)
+        //             .deleteOne(postToDelete)
+        //     }
+        // }
 
         const insertPost = await db
             .collection(MONGODB_COLLECTION)

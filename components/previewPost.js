@@ -61,7 +61,13 @@ export default function PreviewPost({ post, publish, restart, publishStatus }) {
                 </div>
                 <ul className={styles.list}>
                     <li className={utilStyles.headingSm}>Index entry:</li>
-                    <li className={styles.listItem}><a><span>{post.title}</span><span className={styles.lightText}> por {post.author}</span></a></li>
+                    <li className={styles.listItem}><span>{post.title}</span><span className={styles.lightText}> por {post.author}</span></li>
+                    {post.description &&
+                        <>
+                            <li className={utilStyles.headingSm}>Description:</li>
+                            <li className={styles.listItem}><span>{post.description}</span></li>
+                        </>
+                    }
                 </ul>
                 <div className={styles.articleContainer}>
                     <PostComponent post={post} />
