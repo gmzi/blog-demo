@@ -35,4 +35,6 @@ yarn-error.log*
 
 # user instance metadata
 /lib/data.js
+# TEMPLATE README:
+README.md
 
