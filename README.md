@@ -1,3 +1,8 @@
+![Demo](https://res.cloudinary.com/dft2z1qwf/image/upload/v1648075738/blog-home_havjca.jpg)
+<br>
+Next.js blog with a dashboard and a text editor.
+
+
 # What is this? 
 A [Next.Js](https://nextjs.org) blog with a password-protected dashboard where a blog owner can either upload an .md file, or write in the [editor](https://github.com/uiwjs/react-md-editor) to create a new post. When a post is added or removed from the dashboard, an on-demand incremental static regeneration is triggered, and the site rebuilds. 
 
