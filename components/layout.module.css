@@ -48,6 +48,7 @@ flex-grow: 1;
     justify-content: space-between;
     padding: 0rem 1rem;
   }
+
   .container {
       padding: .2rem .7rem;
   }
@@ -58,6 +59,10 @@ flex-grow: 1;
 
   .chat {
       padding-right: .7rem;
+  }
+  .footer {
+    font-size: small;
+    font-weight: 300;
   }
 }
 
