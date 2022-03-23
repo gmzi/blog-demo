@@ -46,6 +46,7 @@ flex-grow: 1;
 @media (max-width: 800px){
   .nav {
     justify-content: space-between;
+    padding: 0rem 1rem;
   }
   .container {
       padding: .2rem .7rem;
