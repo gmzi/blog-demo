@@ -5,12 +5,12 @@ Here's a [live demo](https://blog-gmzi.vercel.app), password is already added to
 
 ## Usage
 
-1. Clone repo and config your local instance
-    - (optionally configure your local instance:)
-    - `git remote add instance <instance_url>`
-    - stage and commit local changes.
-    - `git push -u instance <branchName>` push to remote instance only. 
-    - `git pull origin master` pull changes from template.
+1. Clone repo.
+    - optionally configure your local instance:
+        - `git remote add instance <instance_url>`
+        - stage and commit local changes.
+        - `git push -u instance <branchName>` push to remote instance only. 
+        - `git pull origin master` pull changes from template.
 2. `npm install` packages.
 3. Setup the database to store your posts (we're using [mongodb](https://www.mongodb.com) for this demo).
 4. Create .env.local file with these variables:
