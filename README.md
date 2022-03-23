@@ -1,5 +1,5 @@
 # What is this? 
-A minimal blog with a password-protected dashboard where a blog owner can either upload an .md file, or write in the [editor](https://github.com/uiwjs/react-md-editor) to create a new post. When a post is added or removed from the dashboard, an on-demand incremental static regeneration is triggered, and the site rebuilds. 
+A Next.Js blog with a password-protected dashboard where a blog owner can either upload an .md file, or write in the [editor](https://github.com/uiwjs/react-md-editor) to create a new post. When a post is added or removed from the dashboard, an on-demand incremental static regeneration is triggered, and the site rebuilds. 
 
 Here's a [live demo](https://blog-gmzi.vercel.app), password is already added to login.
 
