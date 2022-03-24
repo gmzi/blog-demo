@@ -15,7 +15,7 @@
    - `git remote add instance <instance_url>`
    - stage and commit local changes.
    - `git push -u instance <branchName>` push to remote instance only.
-   - `git pull origin myInstance` pull changes from template's user instance.
+   - `git pull origin myInstance` pull changes from template's user branch.
 2. `npm install` packages.
 3. Define .env variables:
 
