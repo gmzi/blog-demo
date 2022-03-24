@@ -203,7 +203,7 @@ export default function AddPostForm() {
                             </li>
                         </ul>
                     </div>
-                    <h1>Update 2</h1>
+                    <h1>Update 3</h1>
                 </section>
                 <div>
                     <Link href='/admin/dashboard'>

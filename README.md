@@ -1,6 +1,12 @@
 # Branches
 
-- `master` branch has new features and improvementes, consume it from regular instances.
+1. Create a new branch for each new user.
+2. Work on `master` for new features and improvements.
+3. Checkout to user branch.
+4. Merge master on user to bring latest changes.
+5. Go to user's repo, and pull `git pull origin userBranchName`.
+
+-
 - create a new branch for each new instance. Each instance will pull `git pull origin instanceName`
 
 ## Instructions
