@@ -150,6 +150,26 @@ export default function AddPostForm() {
                 <Header />
                 <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                     <h1>{text.addPostForm.createNew}</h1>
+                    {emptyField &&
+                        <Alert data={emptyField} />
+                    }
+                    {alert ? (
+                        <div className={styles.alertWrapper}>
+                            <Alert data={alert} cancelDeletion={refreshData} downloadFile={null} deletePost={null} />
+                        </div>
+                    ) : (
+                        <form className={styles.form} onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
+                            <label htmlFor="author">{text.addPostForm.authorName}</label>
+                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
+                            <label htmlFor="description">{text.addPostForm.description}</label>
+                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} />
+                            <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
+                            <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
+                            <div className={styles.buttonPreviewContainer}>
+                                <button className={`${dashboardStyles.button} ${styles.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
+                            </div>
+                        </form>
+                    )}
                     <div className={styles.guidelines}>{text.addPostForm.guidelinesTitle}
                         <ul className={styles.ul}>
                             <li>{text.addPostForm.li1}
@@ -183,26 +203,6 @@ export default function AddPostForm() {
                             </li>
                         </ul>
                     </div>
-                    {emptyField &&
-                        <Alert data={emptyField} />
-                    }
-                    {alert ? (
-                        <div className={styles.alertWrapper}>
-                            <Alert data={alert} cancelDeletion={refreshData} downloadFile={null} deletePost={null} />
-                        </div>
-                    ) : (
-                        <form className={styles.form} onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
-                            <label htmlFor="author">{text.addPostForm.authorName}</label>
-                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
-                            <label htmlFor="description">{text.addPostForm.description}</label>
-                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} />
-                            <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
-                            <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
-                            <div className={styles.buttonPreviewContainer}>
-                                <button className={`${dashboardStyles.button} ${styles.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
-                            </div>
-                        </form>
-                    )}
                 </section>
                 <div>
                     <Link href='/admin/dashboard'>
