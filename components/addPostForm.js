@@ -166,12 +166,14 @@ export default function AddPostForm() {
                             <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
                             <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
                             <div className={styles.buttonPreviewContainer}>
-                                <button className={`${dashboardStyles.button} ${styles.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
+                                <button className={`${dashboardStyles.button} ${dashboardStyles.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
                             </div>
                         </form>
                     )}
-                    <div className={styles.guidelines}>{text.addPostForm.guidelinesTitle}
+                    <div className={styles.guidelines}>
                         <ul className={styles.ul}>
+                            <h4>{text.addPostForm.guidelines}</h4>
+                            <p>{text.addPostForm.guidelinesP}</p>
                             <li>{text.addPostForm.li1}
                                 <ul className={styles.codeContainer}>
                                     <li className={styles.codeTitle}><code className={styles.code}>
@@ -204,7 +206,7 @@ export default function AddPostForm() {
                         </ul>
                     </div>
                 </section>
-                <div>
+                <div className={styles.linkContainer}>
                     <Link href='/admin/dashboard'>
                         <a>← {text.addPostForm.goDashboard}</a>
                     </Link>

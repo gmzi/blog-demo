@@ -85,7 +85,8 @@
         "addPostForm": {
             "addPost": "crear post",
             "createNew": "Crear post",
-            "guidelinesTitle": "Los posts se generan a partir de archivos .md, por favor sigue esta guía para adjuntar el tuyo:",
+            "guidelines": "Guía para subir archivos",
+            "guidelinesP": "Los posts se generan a partir de archivos .md, por favor sigue esta guía para adjuntar el tuyo:",
             "li1": "El título del post debe ir en la primera línea. Ejemplo: ",
             "li2": "Por favor fíjate que no queden líneas en blanco antes del título del post",
             "image": "Imagen",
@@ -209,7 +210,8 @@
         "addPostForm": {
             "addPost": "add post",
             "createNew": "Create new post",
-            "guidelinesTitle": "Posts are created from .md files, please follow these guidelines before uploading yours:",
+            "guidelines": "Guidelines",
+            "guidelinesP": "Posts are created from .md files, please follow these guidelines when uploading yours:",
             "li1": "Main title must go in first line. Example:",
             "li2": "Please check that there are no blank lines before main title",
             "image": "Image",
