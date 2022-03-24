@@ -150,8 +150,30 @@ export default function AddPostForm() {
                 <Header />
                 <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                     <h1>{text.addPostForm.createNew}</h1>
-                    <div className={styles.guidelines}>{text.addPostForm.guidelinesTitle}
+                    {emptyField &&
+                        <Alert data={emptyField} />
+                    }
+                    {alert ? (
+                        <div className={styles.alertWrapper}>
+                            <Alert data={alert} cancelDeletion={refreshData} downloadFile={null} deletePost={null} />
+                        </div>
+                    ) : (
+                        <form className={styles.form} onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
+                            <label htmlFor="author">{text.addPostForm.authorName}</label>
+                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
+                            <label htmlFor="description">{text.addPostForm.description}</label>
+                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} />
+                            <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
+                            <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
+                            <div className={styles.buttonPreviewContainer}>
+                                <button className={`${dashboardStyles.button} ${dashboardStyles.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
+                            </div>
+                        </form>
+                    )}
+                    <div className={styles.guidelines}>
                         <ul className={styles.ul}>
+                            <h4>{text.addPostForm.guidelines}</h4>
+                            <p>{text.addPostForm.guidelinesP}</p>
                             <li>{text.addPostForm.li1}
                                 <ul className={styles.codeContainer}>
                                     <li className={styles.codeTitle}><code className={styles.code}>
@@ -183,28 +205,8 @@ export default function AddPostForm() {
                             </li>
                         </ul>
                     </div>
-                    {emptyField &&
-                        <Alert data={emptyField} />
-                    }
-                    {alert ? (
-                        <div className={styles.alertWrapper}>
-                            <Alert data={alert} cancelDeletion={refreshData} downloadFile={null} deletePost={null} />
-                        </div>
-                    ) : (
-                        <form className={styles.form} onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
-                            <label htmlFor="author">{text.addPostForm.authorName}</label>
-                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
-                            <label htmlFor="description">{text.addPostForm.description}</label>
-                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} />
-                            <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
-                            <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
-                            <div className={styles.buttonPreviewContainer}>
-                                <button className={`${dashboardStyles.button} ${styles.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
-                            </div>
-                        </form>
-                    )}
                 </section>
-                <div>
+                <div className={styles.linkContainer}>
                     <Link href='/admin/dashboard'>
                         <a>← {text.addPostForm.goDashboard}</a>
                     </Link>
