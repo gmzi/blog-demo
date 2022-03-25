@@ -66,7 +66,7 @@ export default function Editor({ postBody, postAuthorName, postDescription, upda
             window.removeEventListener('beforeunload', beforeUnloadHandler);
             router.events.off('routeChangeStart', beforeRouteHandler);
         };
-    }, [unsavedChanges]);
+    }, [unsavedChanges, router]);
     
 
     const handleChange = (e) => {
