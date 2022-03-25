@@ -183,20 +183,20 @@ export default function AddPostForm() {
                                 </ul>
                             </li>
                             <li>{text.addPostForm.li2}</li>
-                            <li><strong>{text.addPostForm.iamge}</strong> {text.addPostForm.template}
+                            <li><strong>{text.addPostForm.image}</strong>
                                 <ul className={styles.codeContainer}>
                                     <li className={styles.codeBody}><code className={styles.code}>
                                         ![{text.addPostForm.myImage}](https://{text.addPostForm.myImage}-url.jpg)</code></li>
                                 </ul>
                             </li>
-                            <li><strong>Video</strong> {text.addPostForm.template}
+                            <li><strong>{text.addPostForm.video}</strong>
                                 <ul className={styles.codeContainer}>
                                     <li className={styles.codeBody}><code className={styles.code}>
                                         [![{text.addPostForm.myVideo}](https://{text.addPostForm.myImage}-url.jpg)](https://video-url)</code></li>
                                 </ul>
                             </li>
                             <li>
-                                <Link href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet#blockquotes">
+                                <Link href="https://daringfireball.net/projects/markdown/syntax">
                                     <a target="_blank">{text.addPostForm.cheatSheet}</a>
                                 </Link>
                             </li>
