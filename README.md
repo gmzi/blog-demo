@@ -4,7 +4,8 @@
 2. Work on `master` for new features and improvements.
 3. Checkout to user branch.
 4. Merge master on user to bring latest changes.
-5. Go to user's repo, and pull `git pull origin userBranchName`.
+5. `git push origin userBranch`.
+6. Go to user's repo, and pull `git pull origin userBranch`.
 
 -
 - create a new branch for each new instance. Each instance will pull `git pull origin instanceName`
