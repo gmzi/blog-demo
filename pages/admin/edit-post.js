@@ -79,7 +79,7 @@ export default function EditPost({ post }) {
                         </>
                     ) : (
                         // <Editor body={post.body} id={post.id} authorName={post.authorName} description={post.description} updatePost={updatePost} />
-                        <Editor post={post} updatePost={updatePost} />
+                        <Editor postBody={post.body} postAuthorName={post.authorName} postDescription={post.description} updatePost={updatePost} />
                     )
                     }
                 </section>

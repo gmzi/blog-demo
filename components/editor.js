@@ -32,10 +32,10 @@ const MDEditor = dynamic(
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
-export default function Editor({ post, updatePost }) {
-    const [value, setValue] = useState(post.body);
-    const [authorName, setAuthorName] = useState(post.authorName)
-    const [description, setDescription] = useState(post.description)
+export default function Editor({ postBody, postAuthorName, postDescription, updatePost }) {
+    const [value, setValue] = useState(postBody);
+    const [authorName, setAuthorName] = useState(postAuthorName)
+    const [description, setDescription] = useState(postDescription)
     const [status, setStatus] = useState();
     const [published, setPublished] = useState();
     const router = useRouter()
@@ -70,9 +70,9 @@ export default function Editor({ post, updatePost }) {
 
 
     const handleFormChange = (e) => {
+        setUnsavedChanges(true)
         const authorName = e.target.form.author.value;
         const description = e.target.form.description.value;
-        setUnsavedChanges(true)
         setAuthorName(authorName)
         setDescription(description)
     }
