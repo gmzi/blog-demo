@@ -83,6 +83,7 @@ export async function getStaticProps({ params }) {
         author: post.author,
         date: post.date,
         title: post.title,
+        description: post.description,
         id: post._id,
         contentHtml: post.contentHtml,
         fileName: post.fileName,

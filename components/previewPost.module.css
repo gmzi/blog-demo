@@ -1,4 +1,4 @@
-.section{ 
+.section {
   height: 100%;
   width: 100%;
   margin: 0px 0px;
@@ -19,27 +19,27 @@
 /* --------------------------------------------- */
 
 .container {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-border-radius: 10px;
-border: 1px solid blue;
-background-color: rgb(253, 255, 255);
-padding: 0rem .15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid blue;
+  background-color: rgb(253, 255, 255);
+  padding: 0rem 0.15rem;
 }
 
 .container h4 {
-margin: 0rem 0rem;
+  margin: 0rem 0rem;
 }
 
 .container p {
-margin: .1rem .5rem;
-font-size: medium
+  margin: 0.1rem 0.5rem;
+  font-size: medium;
 }
 
 .btnContainer {
-margin: .5rem 0rem;
+  margin: 0.5rem 0rem;
 }
 
 /* --------------------------------------------- */
@@ -48,15 +48,15 @@ margin: .5rem 0rem;
   background-color: rgba(182, 178, 178, 0.438);
   display: flex;
   flex-direction: column;
-  align-items: center;   
+  align-items: center;
 }
 
 .articleContainer {
-  margin: .1rem 0rem;
   padding: 10px 10px;
   background-color: white;
   border-top: 1px solid rgb(194, 190, 190);
   height: 100vh;
+  width: 98%;
   overflow-y: scroll;
   border-radius: 10px;
 }
@@ -79,7 +79,7 @@ margin: .5rem 0rem;
 }
 
 .listItem a {
-    color: black;
+  color: black;
 }
 
 .btnContainer {
@@ -90,16 +90,16 @@ margin: .5rem 0rem;
   background-color: white;
   padding: 1rem 1rem;
   border-radius: 10px;
-  border: 1px solid red;    
+  border: 1px solid red;
 }
 
 .btnContainer label {
-font-weight: 300;
+  font-weight: 300;
 }
 
-@media (max-width: 700px){
+@media (max-width: 700px) {
   .listItem span {
-      display: block;
+    display: block;
   }
 }
 
@@ -107,4 +107,3 @@ font-weight: 300;
   color: #666;
   font-size: 15px;
 }
-
