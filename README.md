@@ -1,6 +1,6 @@
 # Blog
 
-![Demo](https://res.cloudinary.com/dft2z1qwf/image/upload/v1648140535/screenshot_y9dhoi.png)
+![Demo](https://res.cloudinary.com/dft2z1qwf/image/upload/v1648241359/blog-demo-screenshot_hvmfpp.png)
 <br>
 A Next.js blog with a dashboard and a text editor.
 
