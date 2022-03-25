@@ -67,21 +67,23 @@ export default function Editor({ postBody, postAuthorName, postDescription, upda
             router.events.off('routeChangeStart', beforeRouteHandler);
         };
     }, [unsavedChanges]);
-
-
-    const handleFormChange = (e) => {
-        setUnsavedChanges(true)
-        const authorName = e.target.form.author.value;
-        const description = e.target.form.description.value;
-        setAuthorName(authorName)
-        setDescription(description)
-    }
-
-
+    
 
     const handleChange = (e) => {
         setUnsavedChanges(true)
+        if (e.target){
+            if(e.target.name === 'author'){
+                setAuthorName(e.target.value)
+                return;
+            } 
+            if(e.target.name === 'description'){
+                setDescription(e.target.value)
+                return;
+            }
+        } else {
         setValue(e)
+        return;
+        }
     }
 
 
@@ -104,11 +106,11 @@ export default function Editor({ postBody, postAuthorName, postDescription, upda
                         <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                     ) : null}
                     <div>
-                        <form className={addPostStyles.form} onChange={handleFormChange} encType="multipart/form-data">
+                        <form className={addPostStyles.form} encType="multipart/form-data">
                             <label htmlFor="author">{text.addPostForm.authorName}</label>
-                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} value={authorName} />
+                            <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} value={authorName} onChange={handleChange} />
                             <label htmlFor="description">{text.addPostForm.description}</label>
-                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
+                            <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} onChange={handleChange} />
                         </form>
                         <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
                             previewOptions={{
