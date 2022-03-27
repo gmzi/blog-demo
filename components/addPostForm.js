@@ -123,8 +123,9 @@ export default function AddPostForm() {
         const element = document.createElement("a");
 
         const response = await fetch(`${BASE_URL}/sample-file`, {})
-        const postData = await response.json()
 
+        const postData = await response.json()
+        
         const text = `# ${postData.title}
         ${postData.body}`
         const file = new Blob([text],
