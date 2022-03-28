@@ -8,7 +8,7 @@
 }
 
 .logoLink:hover {
-text-decoration: none;
+  text-decoration: none;
 }
 
 .nav a {
@@ -24,41 +24,41 @@ text-decoration: none;
 }
 
 .main {
-  min-height:calc(100vh - 10rem);
+  min-height: calc(100vh - 10rem);
 }
 
 .footer {
-display: flex;
-padding: .5rem 0;
-border-top: 1px solid #eaeaea;
-justify-content: center;
-align-items: center;
-font-weight: 210; 
+  display: flex;
+  padding: 0.5rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  font-weight: 210;
 }
 
 .footer a {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-grow: 1;
-} 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .nav {
     justify-content: space-between;
-    padding: 0rem 1rem;
+    padding: 0rem 0.45rem;
   }
 
   .container {
-      padding: .2rem .7rem;
+    padding: 0.2rem 0.7rem;
   }
-  
+
   .main {
-      min-height:calc(100vh - 12rem);
-    }
+    min-height: calc(100vh - 12rem);
+  }
 
   .chat {
-      padding-right: .7rem;
+    padding-right: 0.7rem;
   }
   .footer {
     font-size: small;
