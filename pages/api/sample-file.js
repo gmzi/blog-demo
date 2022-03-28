@@ -4,12 +4,14 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
 export default async function handler(req, res) {
-
+    
+    try {
     const fileContent = await fileBody;
 
     const rawData = {
         authorName: "Sample Author",
         fileContent: fileContent,
+        description: "Sample description",
         formatOnly: true,
     }
 
@@ -22,11 +24,20 @@ export default async function handler(req, res) {
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(rawData)
     })
-    const postData = await response.json();
 
+    if (!response.ok){
+        res.status(500).json({error: "failed formatting data"})
+    }
+
+    const postData = await response.json();
     const sampleRaw = postData.newPost;
 
     const sample = JSON.stringify(sampleRaw)
 
     res.status(200).json(sample)
+
+    } catch (e) {
+    console.log(e)
+    res.status(500).json({ error: e.message })
+    }
 }
