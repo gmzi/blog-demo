@@ -51,7 +51,8 @@ export default async function handler(req, res) {
             const path = req.body.fileName
             // REVALIDATE ON-DEMAND
             const revalidatePost = await fetch(`${BASE_URL}/api/revalidate-post?secret=${REVALIDATE_TOKEN}&path=${path}`)
-            if (revalidatePost.ok) {
+            const revalidateIndex = await fetch(`${BASE_URL}/api/revalidate-index?secret=${REVALIDATE_TOKEN}`)
+            if (revalidatePost.ok && revalidateIndex.ok) {
                 res.status(200).json({ message: 'success' })
             } else {
                 res.status(500).json({ error: "failed revalidating" })
