@@ -39,8 +39,6 @@ export default async function handler(req, res) {
         const cleanTitle = mainHeader[0].replace(/[#*]/g, '').trim()
         const textTitle = cleanTitle;
         const fileName = `${cleanTitle.replace(/\s/g, '-')}`
-        // const date = new Date().toISOString().split('T')[0];
-        // const date = new Date().toISOString();
         const date = new Date();
         const authorName = req.body.authorName.trim()
         const description = req.body.description.trim()
