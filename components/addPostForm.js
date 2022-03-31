@@ -20,8 +20,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
 export default function AddPostForm() {
-
-    console.log(text.addPostForm.fillAuthorName)
     const router = useRouter()
 
     const { data: session } = useSession()
