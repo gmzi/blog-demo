@@ -1,10 +1,7 @@
-# Run locally
+# Work locally
 
-Copy and paste:
-
-1. `export BASE_URL=http://localhost:3000`
-2. `node makeData.js`
-3. `npm run dev`
+1. `npm run makeData`
+2. `npm run dev`
 
 # Branches
 
