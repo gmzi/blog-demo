@@ -1,12 +1,10 @@
 # Blog
 
-![Demo](https://res.cloudinary.com/dft2z1qwf/image/upload/v1648241359/blog-demo-screenshot_hvmfpp.png)
-<br>
 A Next.js blog with a dashboard and a text editor.
 
 ## What is this?
 
-A [Next.Js](https://nextjs.org) blog with a password-protected dashboard where a blog owner can either upload an .md file, or write in the [editor](https://github.com/uiwjs/react-md-editor) to create a new post. When a post is added or removed from the dashboard, an on-demand incremental static regeneration is triggered. The authentication is handled by [next-auth](https://next-auth.js.org).
+A [Next.Js](https://nextjs.org) blog with a password-protected dashboard where a blog owner can either upload an .md file, or write in the [editor](https://github.com/uiwjs/react-md-editor) to create a new post. When a post is added or removed from the dashboard, an [on-demand revalidation](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation-beta) is triggered. The authentication is handled by [next-auth](https://next-auth.js.org).
 
 Here's a [live demo](https://blog-gmzi.vercel.app), password is already added so you can play around with it.
 
@@ -42,4 +40,4 @@ Here's a [live demo](https://blog-gmzi.vercel.app), password is already added so
       NEXT_PUBLIC_URL=http://localhost:3000
 
 5. Open /lib/data.js, change values for your own.
-6. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run local production build.
+6. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run production build locally.
