@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "env": "export BASE_URL=http://localhost:3000",
+    "makeData": "node makeData.js"
   },
   "dependencies": {
     "@uiw/react-md-editor": "^3.6.0",
