@@ -56,6 +56,12 @@ export async function getStaticProps() {
     .sort(sort)
     .toArray();
 
+  
+  // CALL SITEMAP GENERATION FUNCTION HERE, WITH POSTS AS ARGUMENT, 
+  // TO CREATE FILE AND SAVE IT TO /public/sitemap.xml
+  // CALL ROBOTS.TXT GENERATION FUNCTION HERE, SAVE FILE TO /PUBLIC/robots.txt,
+  // checkout MARKDOWN_SSG project for guidance on sitemap.xml 
+
   return {
     props: {
       posts: JSON.parse(JSON.stringify(posts))
