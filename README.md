@@ -1,31 +1,26 @@
-# Work locally
+# Blog
 
-1. `npm run makeData`
-2. `npm run dev`
+A Next.js blog with a dashboard and a text editor.
 
-# Branches
+## What is this?
 
-1. Create a new branch for each new user.
-2. Work on `master` for new features and improvements.
-3. Checkout to user branch.
-4. Merge master on user to bring latest changes.
-5. `git push origin userBranch`.
-6. Go to user's repo, and pull `git pull origin userBranch`.
+A [Next.Js](https://nextjs.org) blog with a password-protected dashboard where a blog owner can either upload an .md file, or write in the [editor](https://github.com/uiwjs/react-md-editor) to create a new post. When a post is added or removed from the dashboard, an [on-demand revalidation](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation-beta) is triggered. The authentication is handled by [next-auth](https://next-auth.js.org).
 
--
-- create a new branch for each new instance. Each instance will pull `git pull origin instanceName`
+Here's a [live demo](https://blog-gmzi.vercel.app), password is already added so you can play around with it.
 
-## Instructions
+## Usage
 
-1. Clone repo and config your instance:
-   - `git remote add instance <instance_url>`
-   - stage and commit local changes.
-   - `git push -u instance <branchName>` push to remote instance only.
-   - `git pull origin myInstance` pull changes from template's user branch.
+1. Clone repo.
+   - optionally configure your local instance:
+     - `git remote add instance <instance_url>`
+     - stage and commit local changes.
+     - `git push -u instance <branchName>` (push to remote instance only).
+     - `git pull origin master` (pull changes from template).
 2. `npm install` packages.
-3. Define .env variables:
+3. Set up the database to store your posts (we're using [mongodb](https://www.mongodb.com) for this demo).
+4. Create .env.local file with these variables:
 
-   - Create an .env.local file, and replace "value" with your own values (mind "value_1" and "value_2" must match):  
+   - (mind that fields marked as "value_1" and "value_2" must match):  
       MONGODB_URI=value  
       MONGODB_DB=value  
       MONGODB_COLLECTION=value
@@ -44,12 +39,5 @@
       BASE_URL=http://localhost:3000  
       NEXT_PUBLIC_URL=http://localhost:3000
 
-4. Open /lib/data-template.js, add your own values and change file name to `data.js`.
-5. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run local production build.
-
-## Deploy
-
-- Open .gitignore, remove `/lib/data.js` and `README.md`, push changes to repo.
-- set .env variables for hosting platform.
-
-Deploy and change local .env variables to the ones provided by domain. Vercel was fast, nice and easy in my experience.
+5. Open /lib/data.js, change values for your own.
+6. `npm run dev` to run locally in dev mode, or `npm run build` and `npm start` to run production build locally.
