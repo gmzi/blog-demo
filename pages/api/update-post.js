@@ -30,6 +30,9 @@ export default async function handler(req, res) {
         // Make the new HTML.
         const newContentHtml = await parseMdToHtml(req.body.newText)
 
+        const updateDateObj = new Date();
+        const updateDate = updateDateObj.toISOString();
+
         const { db } = await connectToDatabase();
 
         const filter = { _id: ObjectId(req.body.id) }
@@ -39,7 +42,8 @@ export default async function handler(req, res) {
                 contentHtml: newContentHtml,
                 body: req.body.newText,
                 author: req.body.newAuthorName,
-                description: req.body.newDescription
+                description: req.body.newDescription,
+                lastMod: updateDate
             }
         }
 

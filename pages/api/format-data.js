@@ -71,7 +71,8 @@ export default async function handler(req, res) {
             "description": description,
             "fileName": fileName,
             "body": fileBody,
-            "contentHtml": contentHtml
+            "contentHtml": contentHtml,
+            "lastMod": date
         }
 
         const result = JSON.stringify({ newPost: newPost })
