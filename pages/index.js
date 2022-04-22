@@ -11,7 +11,6 @@ import { connectToDatabase } from '../lib/mongodb'
 import { data, text } from '../lib/data'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
-const URL = process.env.NEXT_PUBLIC_URL;
 
 export default function Home({ posts }) {
 
@@ -46,6 +45,7 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
+  const makeSiteMap = require('../lib/makeSiteMap');
 
   const query = {}
   const sort = { date: -1, fileName: 1 }
@@ -56,11 +56,10 @@ export async function getStaticProps() {
     .sort(sort)
     .toArray();
 
-  
-  // CALL SITEMAP GENERATION FUNCTION HERE, WITH POSTS AS ARGUMENT, 
-  // TO CREATE FILE AND SAVE IT TO /public/sitemap.xml
-  // CALL ROBOTS.TXT GENERATION FUNCTION HERE, SAVE FILE TO /PUBLIC/robots.txt,
-  // checkout MARKDOWN_SSG project for guidance on sitemap.xml 
+  // generate sitemap.xml
+  await makeSiteMap(posts)
+
+  // CALL ROBOTS.TXT GENERATION FUNCTION HERE, SAVE FILE TO ./PUBLIC/robots.txt,
 
   return {
     props: {
