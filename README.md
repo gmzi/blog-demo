@@ -10,7 +10,10 @@
 3. Checkout to user branch.
 4. Merge master on user to bring latest changes.
 5. `git push origin userBranch`.
-6. Go to user's repo, and pull `git pull origin userBranch`.
+6. Go to user's repo, `git checkout -b testNewFeatures`
+7. pull `git pull origin userBranch`.
+8. `git checkout master`, `git merge testNewFeatures`
+9. `git push instance master`
 
 -
 - create a new branch for each new instance. Each instance will pull `git pull origin instanceName`
