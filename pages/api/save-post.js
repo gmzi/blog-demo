@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             return res.status(403).json({ error: "bad token" })
         }
 
-        const { title, date, author, description, fileName, body, contentHtml } = req.body;
+        const { title, date, author, description, fileName, body, contentHtml, lastMod } = req.body;
 
         // CHECK TYPEOF DATA:
         for (let v in req.body) {
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
             }
         }
 
-        if (!title || !date || !author || !fileName || !body || !contentHtml) {
+        if (!title || !date || !author || !fileName || !body || !contentHtml || !lastMod) {
             res.status(400).json({ error: "your post is missing parts, please check and try again" })
             return;
         }
@@ -49,6 +49,7 @@ export default async function handler(req, res) {
             body: body,
             contentHtml: contentHtml,
             visits: 0,
+            lastMod: lastMod
         }
 
         // save object in db
