@@ -45,8 +45,7 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const { db } = await connectToDatabase();
-  const makeSiteMap = require('../lib/makeSiteMap');
-
+  
   const query = {}
   const sort = { date: -1, fileName: 1 }
 
@@ -55,11 +54,6 @@ export async function getStaticProps() {
     .find(query)
     .sort(sort)
     .toArray();
-
-  // generate sitemap.xml
-  await makeSiteMap(posts)
-
-  // CALL ROBOTS.TXT GENERATION FUNCTION HERE, SAVE FILE TO ./PUBLIC/robots.txt,
 
   return {
     props: {
