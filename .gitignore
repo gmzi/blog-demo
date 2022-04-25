@@ -35,5 +35,5 @@ yarn-error.log*
 
 # user instance metadata
 /lib/data.js
-/public/sitemap.xml
+/public/robots.txt
 
