@@ -17,12 +17,6 @@ export default function Home({ posts }) {
 
   return (
     <Layout home>
-      <Head>
-        {/* OpenGraph */}
-        <meta property="og:type" content="index" />
-
-        <title>{data.title}</title>
-      </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         {!posts.length ? (
           <p>No posts yet...</p>

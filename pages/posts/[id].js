@@ -42,23 +42,7 @@ export default function Post({ post }) {
     }
 
     return (
-        <Layout post>
-            <Head>
-                {/* Base meta tags */}
-                <meta name="title" content={post.title} />
-                <meta name="description" content={post.description || data.description} />
-                <meta name="author" content={post.author} />
-                {/* OpenGraph */}
-                <meta property="og:title" content={post.title} />
-                <meta property="og:type" content="article" />
-                <meta property="og:description" content={post.description || data.description} />
-                <meta property="og:url" content={`${URL}/posts/${post.fileName}`} />
-                {/* Twitter */}
-                <meta name="twitter:title" content={post.title} />
-                <meta name="twitter:description" content={post.description || data.description} />
-
-                <title>{post.title}</title>
-            </Head>
+        <Layout post={post}>
             <PostComponent post={post} />
         </Layout>
     )
@@ -82,6 +66,7 @@ export async function getStaticProps({ params }) {
     const result = {
         author: post.author,
         date: post.date,
+        lastMod: post.lastMod,
         title: post.title,
         description: post.description,
         id: post._id,
