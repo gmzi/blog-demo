@@ -10,6 +10,7 @@ export default async function handler(req, res) {
 
     const rawData = {
         authorName: "Sample Author",
+        description: "sample description",
         fileContent: fileContent,
         description: "Sample description",
         formatOnly: true,
