@@ -28,7 +28,7 @@ export default function Post({ post }) {
             }catch(e){}
         }
         updateVisits()
-    }, [])
+    }, [post.id])
 
     if (!post) {
         return (
