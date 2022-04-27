@@ -1,4 +1,4 @@
-import { da } from "date-fns/locale"
+// import { da } from "date-fns/locale"
 import Link from "next/link"
 import styles from "./alert.module.css"
 import dashboardStyles from '../styles/dashboard.module.css'

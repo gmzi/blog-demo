@@ -6,49 +6,82 @@ import LogoAdmin from '../components/logo-admin'
 import Footer from './Footer'
 import { data, text } from '../lib/data'
 
-const BASE_URL = process.env.BASE_URL
-const URL = process.env.NEXT_PUBLIC_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_URL;
 
 export default function Layout({ children, home, post, dashboard }) {
+
+    let url;
+    let type;
+
+    if (post) {
+        url = `${BASE_URL}/posts/${post.fileName}`
+        type = 'article'
+    } else {
+        url =  BASE_URL
+        type = 'website'
+    }
+
+
+    const render = {
+        // static fields:
+        url: url,
+        language: data.language,
+        site_name: data.site_name,
+        author_name: data.author_name,
+        ogImage: data.ogImage,
+        twitterProfile: data.profiles.twitter,
+        // dynamic fields:
+        title: data.title,
+        description: data.description,
+        type: type,
+        author: null,
+        fileName: '',
+        date: '',
+        lastMod: '',
+        ...post
+    }
 
     return (
         <>
             <Head>
+                {/* Base meta tags */}
+                <title>{render.title}{render.author ? ` - ${render.author}` : null}</title>
+                <meta name="robots" content="follow, index" />
+                <meta content={render.description} name="description"/>
+                <meta property="og:url" content={render.url} />
+                <link rel="canonical" href={`${BASE_URL}/`} />
+
+                {/* OpenGraph */}
                 {post ? (
                     <>
-                        {/* Base meta tags */}
-                        <meta httpEquiv='Content-Language' content={data.language} />
-                        <link rel="icon" href="/favicon.ico" />
-                        {/* OpenGraph */}
-                        <meta property="og:site_name" content={data.name} />
-                        <meta property="og:image" content={data.ogImage} />
-                        {/* Twitter */}
-                        <meta name="twitter:card" content="summary_large_image" />
-                        <meta name="twitter:image" content={data.ogImage} />
+                    <meta property="og:type" content="article" />
+                    <meta property="article:author" content={[...render.author]}/>
+                    <meta property="article:published_time" content={render.date} />
+                    <meta property="article:modified_time" content={render.lastMod} />
                     </>
-
-                ) : (
-                    <>
-                        {/* Base meta tags */}
-                        <meta httpEquiv='Content-Language' content={data.language} />
-                        <link rel="icon" href="/favicon.ico" />
-                        <meta name="title" content={data.title} />
-                        <meta name="description" content={data.description} />
-                        {/* OpenGraph */}
-                        <meta property="og:site_name" content={data.name} />
-                        <meta property="og:title" content={data.title} />
-                        <meta property="og:description" content={data.description} />
-                        <meta property="og:image" content={data.ogImage} />
-                        <meta property="og:url" content={URL} />
-                        {/* Twitter */}
-                        <meta name="twitter:card" content="summary_large_image" />
-                        <meta name="twitter:title" content={data.title} />
-                        <meta name="twitter:description" content={data.description} />
-                        <meta name="twitter:image" content={data.ogImage} />
-                    </>
+                ): (
+                    <meta property="og:type" content="website" />
                 )}
-
+                <meta property="og:site_name" content={render.site_name} />
+                <meta property="og:description" content={render.description} />
+                <meta property="og:title" content={render.title} />
+                <meta property="og:image" content={render.ogImage} />
+                
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                {render.twitterProfile &&
+                    <meta name="twitter:site" content={render.twitterProfile}/>
+                }
+                <meta name="twitter:title" content={render.title} />
+                <meta name="twitter:description" content={render.description} />
+                <meta name="twitter:image" content={render.ogImage} />
+                {/*Other meta tags  */}
+                <meta httpEquiv='Content-Language' content={render.language} />
+                <link rel="icon" href="/favicon.ico" />
+                <meta name="title" content={render.title} />
+                <meta name="theme-color" content="#317EFB"/>
             </Head>
+
             <nav className={styles.nav}>
                 {dashboard ? (
                     // eslint-disable-next-line @next/next/no-html-link-for-pages
@@ -72,6 +105,7 @@ export default function Layout({ children, home, post, dashboard }) {
                     </a>
                 </Link>
             </nav>
+            
             <div className={styles.container}>
                 <main className={styles.main}>{children}</main>
                 {!home && (
