@@ -33,7 +33,3 @@ yarn-error.log*
 # vercel
 .vercel
 
-# user instance metadata
-/lib/data.js
-/public/robots.txt
-
