@@ -26,14 +26,15 @@ export default function Layout({ children, home, post, dashboard }) {
         // static fields:
         url: url,
         language: data.language,
-        name: data.name,
+        site_name: data.site_name,
+        author_name: data.author_name,
         ogImage: data.ogImage,
         twitterProfile: data.profiles.twitter,
         // dynamic fields:
         title: data.title,
         description: data.description,
         type: type,
-        author: '',
+        author: null,
         fileName: '',
         date: '',
         lastMod: '',
@@ -44,17 +45,13 @@ export default function Layout({ children, home, post, dashboard }) {
         <>
             <Head>
                 {/* Base meta tags */}
-                <title>{render.title}</title>
+                <title>{render.title}{render.author ? ` - ${render.author}` : null}</title>
                 <meta name="robots" content="follow, index" />
-                <meta name="description" content={render.description} />
-                <link rel="canonical" href={BASE_URL} />
+                <meta content={render.description} name="description"/>
+                <meta property="og:url" content={render.url} />
+                <link rel="canonical" href={`${BASE_URL}/`} />
 
                 {/* OpenGraph */}
-                <meta property="og:url" content={render.url} />
-                <meta property="og:site_name" content={render.name} />
-                <meta property="og:description" content={render.description} />
-                <meta property="og:title" content={render.title} />
-                <meta property="og:image" content={render.ogImage} />
                 {post ? (
                     <>
                     <meta property="og:type" content="article" />
@@ -65,16 +62,19 @@ export default function Layout({ children, home, post, dashboard }) {
                 ): (
                     <meta property="og:type" content="website" />
                 )}
+                <meta property="og:site_name" content={render.site_name} />
+                <meta property="og:description" content={render.description} />
+                <meta property="og:title" content={render.title} />
+                <meta property="og:image" content={render.ogImage} />
+                
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-
                 {render.twitterProfile &&
                     <meta name="twitter:site" content={render.twitterProfile}/>
                 }
                 <meta name="twitter:title" content={render.title} />
                 <meta name="twitter:description" content={render.description} />
                 <meta name="twitter:image" content={render.ogImage} />
-
                 {/*Other meta tags  */}
                 <meta httpEquiv='Content-Language' content={render.language} />
                 <link rel="icon" href="/favicon.ico" />

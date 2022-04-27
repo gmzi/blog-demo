@@ -18,6 +18,7 @@ export default function Home({ posts }) {
   return (
     <Layout home>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h1 style={{display: "none"}}>{data.title}</h1>
         {!posts.length ? (
           <p>No posts yet...</p>
         ) : (
