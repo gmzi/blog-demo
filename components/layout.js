@@ -79,6 +79,7 @@ export default function Layout({ children, home, post, dashboard }) {
                 <meta httpEquiv='Content-Language' content={render.language} />
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="title" content={render.title} />
+                <meta name="theme-color" content="#317EFB"/>
             </Head>
 
             <nav className={styles.nav}>
