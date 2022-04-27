@@ -67,7 +67,10 @@ export default function Layout({ children, home, post, dashboard }) {
                 )}
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content={render.twitterProfile}/>
+
+                {render.twitterProfile &&
+                    <meta name="twitter:site" content={render.twitterProfile}/>
+                }
                 <meta name="twitter:title" content={render.title} />
                 <meta name="twitter:description" content={render.description} />
                 <meta name="twitter:image" content={render.ogImage} />
