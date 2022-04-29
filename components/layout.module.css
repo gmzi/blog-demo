@@ -1,3 +1,6 @@
+.mainContainer {
+}
+
 .nav {
   /* max-width: 70rem; */
   display: flex;
@@ -19,8 +22,10 @@
 
 .container {
   max-width: 36rem;
-  margin: 2rem auto 1rem;
+  margin: 2rem auto 2rem;
   padding: 1rem 0rem;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .main {
@@ -30,7 +35,9 @@
 .footer {
   display: flex;
   padding: 0.5rem 0;
-  border-top: 1px solid #eaeaea;
+  margin: 0;
+  /* border-top: 1px solid #eaeaea; */
+  border-radius: 5px;
   justify-content: center;
   align-items: center;
   font-weight: 210;
@@ -69,3 +76,4 @@
 .backToHome {
   margin: 1.5rem 0 0;
 }
+

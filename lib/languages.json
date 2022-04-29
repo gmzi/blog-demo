@@ -123,6 +123,10 @@
             "indexEntry": "Así se ve en el índice:",
             "by": "por",
             "description": "descripción"
+        },
+        "theme": {
+            "dark": "oscuro",
+            "light": "claro"
         }
     },
     "EN": {
@@ -249,6 +253,10 @@
             "indexEntry": "Index entry:",
             "by": "by",
             "description": "description"
+        },
+        "theme": {
+            "dark": "dark",
+            "light": "light"
         }
     }
 }

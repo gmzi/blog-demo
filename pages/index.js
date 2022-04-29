@@ -1,19 +1,13 @@
-import { useEffect } from 'react'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Date from '../components/date'
-import Logo from '../components/logo'
-import Footer from '../components/Footer'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { connectToDatabase } from '../lib/mongodb'
-import { data, text } from '../lib/data'
+import { data } from '../lib/data'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
 
 export default function Home({ posts }) {
-
 
   return (
     <Layout home>
@@ -27,7 +21,7 @@ export default function Home({ posts }) {
               <li className={utilStyles.listItem} key={_id}>
                 <Link href={`/posts/${fileName}`}>
                   {/* <a><span>{title}</span><span className={utilStyles.lightText}> {text.index.by} {author}</span></a> */}
-                  <a><span className={utilStyles.lightText}> <Date dateString={date} /></span> <span>{title}</span></a>
+                  <a><span className={utilStyles.lightText}> <Date dateString={date} /></span> <span className={utilStyles.postTitle}>{title}</span></a>
                 </Link>
               </li>
             ))}

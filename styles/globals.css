@@ -7,7 +7,6 @@ body {
 }
 
 a {
-  color: #0070f3;
   text-decoration: none;
 }
 
@@ -18,4 +17,67 @@ a:hover {
 * {
   box-sizing: border-box;
 }
+
+/* --------------------------------------------------------------------------- */
+/* THEME LIGHT */
+
+:root nav, 
+:root footer {
+  background-color: ghostwhite;
+}
+
+:root {
+  background-color: #fff;
+}
+
+:root a {
+  color: #0070f3;
+}
+
+:root button {
+background-color: inherit;
+border: none;
+display: inline-flex;
+align-items: center;
+}
+
+:root button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2px;
+  stroke: black;
+}
+
+/* ------------------------------------------------------- */
+/* THEME DARK */
+
+[data-theme='dark'] nav, 
+[data-theme='dark'] footer {
+  background-color: gray;
+}
+
+
+
+[data-theme='dark'] {
+  background-color: #000;
+  color: #fff;
+  font-weight: bolder;
+}
+
+[data-theme='dark'] a {
+  color:#d0cfcf;
+}
+
+[data-theme='dark'] .title {
+  color: white;
+}
+
+[data-theme='dark'] button svg {
+  stroke: white;
+}
+
+/* [data-theme='dark'] .list {
+  color: white;
+} */
+
 

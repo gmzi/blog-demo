@@ -7,10 +7,9 @@
 }
 
 .headingLg,
-.post h2, 
 .post h3 {
   line-height: 1.4;
-  margin: 3rem 0 3rem 0;
+  margin: 3rem 0 1rem 0;
 }
 
 .post hr {
@@ -33,7 +32,7 @@
 }
 
 .post a {
-  color: rgb(0, 0, 173);
+  /* color: rgb(0, 0, 173); */
 }
 
 /* Notes section */
@@ -41,4 +40,8 @@
   border-top: 1px solid #eaeaea;
   margin: 3rem 0 1rem 0;
   padding: 1rem 0rem;
+}
+
+.post section ol {
+  padding: 0rem 1rem;
 }
