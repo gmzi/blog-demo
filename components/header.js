@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <header>
-            <div className={styles.signedInStatus}>
+            <div className={styles.sessionStatus}>
                 <p
                     className={`nojs-show ${!session && loading ? styles.loading : styles.loaded
                         }`}

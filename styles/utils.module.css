@@ -50,14 +50,6 @@
     line-height: 1rem;
   }
 
-  .listItem a {
-      color: black;
-  }
-
-  [data-theme='dark'] .listItem a {
-    color: white;
-  }
-
   @media (max-width: 700px){
     .listItem span {
         display: block;
@@ -65,6 +57,5 @@
   }
   
   .lightText {
-    color: #666;
     font-size: 15px;
   }

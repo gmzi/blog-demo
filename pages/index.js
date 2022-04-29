@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Date from '../components/date'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import themes from '../styles/themes.module.css'
 import { connectToDatabase } from '../lib/mongodb'
 import { data } from '../lib/data'
 
@@ -21,7 +22,7 @@ export default function Home({ posts }) {
               <li className={utilStyles.listItem} key={_id}>
                 <Link href={`/posts/${fileName}`}>
                   {/* <a><span>{title}</span><span className={utilStyles.lightText}> {text.index.by} {author}</span></a> */}
-                  <a><span className={utilStyles.lightText}> <Date dateString={date} /></span> <span className={utilStyles.postTitle}>{title}</span></a>
+                  <a><span className={themes.lightText}> <Date dateString={date} /></span> <span className={utilStyles.postTitle}>{title}</span></a>
                 </Link>
               </li>
             ))}
