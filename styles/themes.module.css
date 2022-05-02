@@ -5,3 +5,24 @@
 .sessionStatus {
     background-color: rgba(0, 0, 0, 0.05);
   }
+
+.container {
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1rem;
+    border: 5px solid rgba(109, 109, 243, 0.432);
+    background-color: white;
+}
+
+/* .container h4 {
+    margin: 0rem 0rem;
+}
+
+.container p {
+    margin: .1rem .5rem;
+    font-size: medium
+} */

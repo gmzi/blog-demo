@@ -2,6 +2,7 @@
 import Link from "next/link"
 import styles from "./alert.module.css"
 import dashboardStyles from '../styles/dashboard.module.css'
+import themes from '../styles/themes.module.css'
 import { text } from "../lib/data"
 
 
@@ -84,7 +85,7 @@ export default function Alert({ data, cancelAction, downloadFile, deletePost, re
 
     if (data.alert === 'messageAlert') {
         return (
-            <div className={styles.container}>
+            <div className={themes.container}>
                 <p>{data.message}</p>
             </div>
         )

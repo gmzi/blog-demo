@@ -33,7 +33,7 @@ header div {
   padding: 1rem;
   margin: 0;
   transition: all 0.2s ease-in;
-  text-align: left;
+  text-align: center;
 }
 
 /* --------------------------------------------------------------------------- */
@@ -52,15 +52,15 @@ header div {
   background-color: #FFFFFF;
 }
 
-:root ul a {
-  color: black;
-}
-
 :root a {
   color: #0070f3;
 }
 
-:root button svg {
+:root ul a {
+  color: black;
+}
+
+:root nav button svg {
   width: 1.5rem;
   height: 1.5rem;
   stroke-width: 2px;
@@ -70,6 +70,44 @@ header div {
 :root article {
   color: #181818;
 }
+
+/* code snippets */
+:root article pre {
+  background-color: rgb(240, 234, 234);
+}
+
+/* POST NOTES */
+:root section h2 {
+  border-top: 1px solid #eaeaea;
+}
+
+/* --------------------------------------------------------- */
+/* AddPostForm guidelines */
+:root ol {
+  background-color: #f0f8ff;
+}
+
+:root ol ul {
+  background-color: rgb(26, 0, 0);
+}
+
+:root code {
+  color: white;
+}
+
+:root form {
+  border-bottom: 1px solid rgba(59, 59, 59, 0.212);
+}
+
+:root form input,
+:root form textarea {
+  background: #fff;
+  border: 1px solid #bbb;
+}
+
+/* --------------------------------------------------------- */
+
+
 
 /* ------------------------------------------------------- */
 /* THEME DARK */

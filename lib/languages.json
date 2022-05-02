@@ -94,7 +94,7 @@
             "template": "ejemplo de sintaxis",
             "myImage": "mi-imagen",
             "myVideo": "Título del video",
-            "cheatSheet": "Guía de sintaxis para archivos Markdown",
+            "cheatSheet": "Ver guía de sintaxis para archivos Markdown",
             "downloadSample": "Descarga un archivo .md de muestra",
             "authorName": "nombre del autor",
             "authorPlaceholder": "tal como será mostrado en público",
@@ -110,7 +110,8 @@
             "titleDuplicate": "Ya tienes un post con el mismo título, por favor edita tu archivo y adjúntalo de nuevo",
             "errorFormatting": "Error formateando datos, por favor revisa tu archivo e inténtalo de nuevo",
             "postPublished": "Post publicado, felicitaciones!!!!",
-            "failedPublishing": "Error al intentar publicar, por favor edita tu archivo e intenta de nuevo"
+            "failedPublishing": "Error al intentar publicar, por favor edita tu archivo e intenta de nuevo",
+            "here": "aqui"
         },
         "previewPost": {
             "refreshIndex": "refrescar página de inicio",
@@ -224,7 +225,7 @@
             "template": "syntax template",
             "myImage": "my-image",
             "myVideo": "My video title",
-            "cheatSheet": "Markdown syntax reference",
+            "cheatSheet": "Check Markdown syntax reference",
             "downloadSample": "Download sample .md file",
             "authorName": "author name",
             "authorPlaceholder": "author name as it will be publicly displayed",
@@ -240,7 +241,8 @@
             "titleDuplicate": "The title of your post already exists, please edit your attached file and try again",
             "errorFormatting": "Error formatting data, please check guidelines and try again",
             "postPublished": "Post published, congratulations!!!!",
-            "failedPublishing": "Failed publishing, please edit file and try again"
+            "failedPublishing": "Failed publishing, please edit file and try again",
+            "here": "here"
         },
         "previewPost": {
             "refreshIndex": "refresh index page",

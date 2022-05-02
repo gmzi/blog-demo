@@ -25,23 +25,22 @@
     inset 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.05);
 }
 
+/* Code sample code */
 .post pre {
-  background-color: rgb(240, 234, 234);
   border-radius: 5px;
   padding: 0.5rem;
 }
 
-.post a {
-  /* color: rgb(0, 0, 173); */
-}
-
 /* Notes section */
 .post section h2 {
-  border-top: 1px solid #eaeaea;
   margin: 3rem 0 1rem 0;
   padding: 1rem 0rem;
 }
 
 .post section ol {
   padding: 0rem 1rem;
+}
+
+.post {
+  font-weight: 300;
 }

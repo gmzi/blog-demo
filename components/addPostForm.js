@@ -6,6 +6,7 @@ import Head from "next/head";
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css'
 import styles from './addPostForm.module.css'
+import themes from '../styles/themes.module.css'
 import dashboardStyles from '../styles/dashboard.module.css'
 import PreviewPost from './previewPost';
 import Header from './header';
@@ -168,8 +169,8 @@ export default function AddPostForm() {
                             </div>
                         </form>
                     )}
-                    <div className={styles.guidelines}>
-                        <ul className={styles.ul}>
+                    <div>
+                        <ol className={styles.ol}>
                             <h4>{text.addPostForm.guidelines}</h4>
                             <p>{text.addPostForm.guidelinesP}</p>
                             <li>{text.addPostForm.li1}
@@ -195,13 +196,13 @@ export default function AddPostForm() {
                             </li>
                             <li>
                                 <Link href="https://daringfireball.net/projects/markdown/syntax">
-                                    <a target="_blank">{text.addPostForm.cheatSheet}</a>
+                                    <span>{text.addPostForm.cheatSheet} <a target="_blank">here</a></span>
                                 </Link>
                             </li>
                             <li>
                                 <button className={`${dashboardStyles.button} ${dashboardStyles.buttonDownload}`} onClick={handleDownload}>{text.addPostForm.downloadSample}</button>
                             </li>
-                        </ul>
+                        </ol>
                     </div>
                 </section>
                 <div className={styles.linkContainer}>

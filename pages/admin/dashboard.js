@@ -7,6 +7,7 @@ import Layout from '../../components/layout';
 import { data } from '../../lib/data';
 import utilStyles from '../../styles/utils.module.css'
 import styles from '../../styles/dashboard.module.css'
+import themes from '../../styles/themes.module.css'
 import { connectToDatabase } from '../../lib/mongodb'
 import Header from '../../components/header'
 import { useSession, getSession } from 'next-auth/react';
@@ -156,17 +157,17 @@ ${postData.body}`
                         <p>{text.dashboard.updatingData}</p>
                     ) : (
                         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-
                             <ul className={`${styles.list}`}>
                                 <h3>{text.dashboard.newPost}</h3>
                                 <li className={styles.actionItem}>
                                     <Link href="/admin/write-post">
-                                        <a>{text.dashboard.writeInEditor}</a>
+                                        {/* ADD THEME STYLE FOR <A> TAG */}
+                                        <button className={`${styles.button} ${styles.buttonCreate}`}>{text.dashboard.writeInEditor}</button>
                                     </Link>
                                 </li>
                                 <li className={styles.actionItem}>
                                     <Link href="/admin/upload-post">
-                                        <a >{text.dashboard.uploadFile}</a>
+                                        <button className={`${styles.button} ${styles.buttonCreate}`}>{text.dashboard.uploadFile}</button>
                                     </Link>
                                 </li>
                             </ul>

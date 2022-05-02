@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Layout from "./layout"
-import Head from "next/head"
-import Header from './header'
-import Link from "next/link"
+import { useState, useEffect } from "react";
 import { text } from "../lib/data";
 import rehypeSanitize from "rehype-sanitize";
-import { grabText } from "../lib/grabText";
 import Alert from './alert'
 import styles from '../styles/dashboard.module.css'
 import utilStyles from '../styles/utils.module.css'
