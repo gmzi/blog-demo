@@ -25,6 +25,17 @@ button {
   align-items: center;
 }
 
+header div {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem;
+  margin: 0;
+  transition: all 0.2s ease-in;
+  text-align: left;
+}
+
 /* --------------------------------------------------------------------------- */
 /* THEME LIGHT */
 

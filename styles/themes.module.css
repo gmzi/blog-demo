@@ -1,3 +1,7 @@
 .lightText {
     color: #666;
 }
+
+.sessionStatus {
+    background-color: rgba(0, 0, 0, 0.05);
+  }

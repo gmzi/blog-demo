@@ -165,7 +165,7 @@ ${postData.body}`
                                     </Link>
                                 </li>
                                 <li className={styles.actionItem}>
-                                    <Link href="/admin/create-post">
+                                    <Link href="/admin/upload-post">
                                         <a >{text.dashboard.uploadFile}</a>
                                     </Link>
                                 </li>

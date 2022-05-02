@@ -7,7 +7,7 @@
             "signInAs": "ingresar como editor",
             "signIn": "ingresar",
             "signedInAs": "logueado como",
-            "editor": "editor",
+            "editor": "como editor",
             "signOut": "salir"
         },
         "auth": {
@@ -134,10 +134,10 @@
             "by": "by"
         },
         "header": {
-            "signInAs": "sign in as editor",
+            "signInAs": "sign in",
             "signIn": "sign in",
             "signedInAs": "signed in as",
-            "editor": "editor",
+            "editor": "as editor",
             "signOut": "sign out"
         },
         "auth": {
