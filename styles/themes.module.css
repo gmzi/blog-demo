@@ -1,14 +1,4 @@
-.lightText {
-    color: #666;
-}
-
-.sessionStatus {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
 .container {
-    border: 5px solid rgba(109, 109, 243, 0.432);
-    background-color: white;
     height: 98%;
     display: flex;
     flex-direction: column;
@@ -19,7 +9,6 @@
 }
 
 .guidelines {
-    background-color: #f0f8ff;
     font-size: 0.9rem;
     border-radius: 5px;
     margin: .5rem;
@@ -30,3 +19,79 @@
     margin: 0rem 1rem;
     padding: .5rem;
 }
+
+.logoContainer { 
+    border-radius: 3px;
+    padding: .8rem 0rem;
+}
+
+  
+.logoTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoTitle {
+  font-size: normal;
+}
+
+.logoName {
+  font-weight: 400;
+}
+
+.logoContainer .svg {
+  margin-right: .2rem;
+}
+
+/* --------------------------------------- */
+/* THEME LIGHT */
+
+.span circle {
+    fill: rgba(0, 0, 0, 0.744);
+}
+
+.container {
+    border: 5px solid rgba(109, 109, 243, 0.432);
+    background-color: white;
+}
+
+.lightText {
+    color: rgb(140, 140, 140);
+}
+
+.sessionStatus {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+.guidelines {
+    background-color: #f0f8ff;
+}
+
+.logoContainer:hover {
+    text-decoration: underline 3px solid #0000ffc9;
+}
+
+.logoTitle {
+    color: rgba(0, 0, 0, 0.922);
+    text-decoration: underline 1px solid #0000ff86;
+}
+
+/* --------------------------------------- */
+/* THEME DARK */
+
+[data-theme='dark'] .span circle {
+    fill: white;
+}
+
+[data-theme='dark'] .logoContainer:hover {
+    text-decoration: underline 3px solid #B798FF;
+}
+
+[data-theme='dark'] .logoTitle {
+    color: rgba(216, 212, 212, 0.922);
+    text-decoration: underline 1px solid #B798FF;
+}
+
+

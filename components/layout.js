@@ -111,13 +111,11 @@ export default function Layout({ children, home, post, dashboard }) {
                 </Link>
                 
                 {mounted && (
-                <button className={dashboardStyles.buttonTheme} onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+                <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
                     {/* {theme === 'light' ? <span>&#x263E;</span> : <span>&#x2600;</span>} */}
                     {/* {theme === 'light' ? `${text.theme.dark}` : `${text.theme.light}`} */}
                     {theme === 'light' ? (
                         <svg
-                        id="light"
-                        // stroke="black"
                         height="100%" 
                         width="100%"  
                         viewBox="0 0 50 50"
@@ -133,20 +131,21 @@ export default function Layout({ children, home, post, dashboard }) {
                         </svg>
                     ): (
                         <svg 
-                        // stroke="red" 
-                        className={themes.dark}
                         height="100%" 
                         width="100%" 
                         viewBox="0 0 50 50" 
+                        fill="none"
+                        fillRule="evenodd"
+                        opacity="1" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M25 15.3791C30.4143 15.3791 34.8184 19.6957 34.8184 25C34.8184 30.3054 
                         30.4143 34.6209 25 34.6209C19.5868 34.6209 15.1816 30.3054 15.1816 25C15.1816 
                         19.6957 19.5868 15.3791 25 15.3791M25 46.3797L25 39.9658M25 10.0342L25 3.62028M3.1814 
                         25L9.72698 25M40.273 25L46.8186 25M9.57207 40.1187L14.2009 35.583M35.7991 14.4192L40.429 
                         9.8824M9.57207 9.8824L14.2009 14.4192M35.7991 35.583L40.429 40.1187" 
-                        fill="none" fillRule="evenodd" opacity="1" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"/>
+                        />
                         </svg>
                     )}
                 </button>

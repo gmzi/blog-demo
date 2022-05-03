@@ -19,11 +19,19 @@ a:hover {
 }
 
 button {
-  background-color: inherit;
   border: none;
   display: inline-flex;
   align-items: center;
 }
+
+nav button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2px;
+  background-color: inherit;
+}
+
+
 
 header div {
   display: block;
@@ -56,15 +64,16 @@ header div {
   color: #0070f3;
 }
 
-:root ul a {
-  color: black;
+:root button {
+  background-color: inherit;
 }
 
 :root nav button svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  stroke-width: 2px;
-  stroke: black;
+  stroke: rgba(26, 26, 26, 0.623);
+}
+
+:root ul a {
+  color: rgba(0, 0, 0, 0.844);
 }
 
 :root article {
@@ -101,14 +110,75 @@ header div {
   border: 1px solid #bbb;
 }
 
-/* --------------------------------------------------------- */
 
-
-
+/* ------------------------------------------------------- */
 /* ------------------------------------------------------- */
 /* THEME DARK */
 
 [data-theme='dark'] nav, 
+[data-theme='dark'] footer {
+  background-color: rgb(48, 48, 50)
+}
+
+[data-theme='dark'] nav {
+  border-bottom: 1px solid rgba(217, 217, 233, 0.124);
+}
+
+[data-theme='dark'] {
+  background-color: #121212;
+}
+
+[data-theme='dark'] a {
+  color: #8ACAFF;
+}
+
+[data-theme='dark'] nav button svg {
+  stroke-width: 2px;
+  stroke: rgba(243, 243, 243, 0.623);
+}
+
+
+[data-theme='dark'] ul a {
+  color: rgba(240, 236, 236, 0.844);
+}
+
+[data-theme='dark'] article {
+  color: #eaeaeae6;
+}
+
+/* code snippets */
+[data-theme='dark'] article pre {
+  background-color: rgb(32, 32, 32);
+}
+
+/* POST NOTES */
+[data-theme='dark'] section h2 {
+  border-top: 1px solid #eaeaea;
+}
+
+/* --------------------------------------------------------- */
+/* AddPostForm guidelines */
+[data-theme='dark'] ol ul {
+  background-color: rgb(26, 0, 0);
+}
+
+[data-theme='dark'] code {
+  color: white;
+}
+
+[data-theme='dark'] form {
+  border-bottom: 1px solid rgba(59, 59, 59, 0.212);
+}
+
+[data-theme='dark'] form input,
+[data-theme='dark'] form textarea {
+  background: #fff;
+  border: 1px solid #bbb;
+}
+
+
+
+/* [data-theme='dark'] nav, 
 [data-theme='dark'] footer {
   background-color: gray;
 }
@@ -133,10 +203,7 @@ header div {
 
 [data-theme='dark'] button svg {
   stroke: white;
-}
-
-/* [data-theme='dark'] .list {
-  color: white;
 } */
+
 
 
