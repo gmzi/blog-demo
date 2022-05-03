@@ -151,55 +151,57 @@ ${postData.body}`
                 <Head>
                     <title>{data.title}-{text.dashboard.dashboard}</title>
                 </Head>
-                <h1>{text.dashboard.dashboard}</h1>
-                {
-                    isRefreshing ? (
-                        <p>{text.dashboard.updatingData}</p>
-                    ) : (
-                        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                            <ul className={`${styles.list}`}>
-                                <h3>{text.dashboard.newPost}</h3>
-                                <li className={styles.actionItem}>
-                                    <Link href="/admin/write-post">
-                                        {/* ADD THEME STYLE FOR <A> TAG */}
-                                        <button className={`${styles.button} ${styles.buttonCreate}`}>{text.dashboard.writeInEditor}</button>
-                                    </Link>
-                                </li>
-                                <li className={styles.actionItem}>
-                                    <Link href="/admin/upload-post">
-                                        <button className={`${styles.button} ${styles.buttonCreate}`}>{text.dashboard.uploadFile}</button>
-                                    </Link>
-                                </li>
-                            </ul>
-                            <ul className={`${styles.list} ${styles.parent}`}>
-                                {alert ? (
-                                    <Alert data={alert} cancelAction={cancelAction} downloadFile={handleDownload} deletePost={deletePost} resetCounter={resetCounter} />
-                                ) : null}
-                                <h3>{text.dashboard.previousPosts}</h3>
-                                {!posts.length &&
-                                    <p>{text.dashboard.noPosts}</p>}
-                                {posts.map(({ _id, fileName, title, author, visits }) => (
-                                    <li className={styles.listItem} key={_id}>
-                                        <div>
-                                            <Link href={`/posts/${fileName}`}>
-                                                <a>
-                                                    <span className={styles.titleSpan}>{title}</span>
-                                                    <span className={utilStyles.lightText}> {text.dashboard.by} {author}</span>
-                                                </a>
+                <section className={themes.section}>
+                    <h2>{text.dashboard.dashboard}</h2>
+                        {
+                            isRefreshing ? (
+                                <p>{text.dashboard.updatingData}</p>
+                            ) : (
+                                <>
+                                    <ul className={`${styles.list}`}>
+                                        <h3>{text.dashboard.newPost}</h3>
+                                        <li className={styles.actionItem}>
+                                            <Link href="/admin/write-post">
+                                                {/* ADD THEME STYLE FOR <A> TAG */}
+                                                <button className={`${themes.button} ${themes.buttonCreate}`}>{text.dashboard.writeInEditor}</button>
                                             </Link>
-                                        </div>
-                                        <div className={styles.btnContainer}>
-                                            <button className={`${styles.button} ${styles.buttonCounter}`} onClick={handleReset} id={_id}>{text.dashboard.visits} {visits}</button>
-                                            <button className={styles.button} onClick={handleDownload} id={_id}>{text.dashboard.download}</button>
-                                            <button className={styles.button} onClick={handleEdit} id={_id}>{text.dashboard.edit}</button>
-                                            <button className={`${styles.button} ${styles.buttonDelete}`} id={_id} name={fileName} onClick={handleDelete}>{text.dashboard.delete}</button>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
-                    )
-                }
+                                        </li>
+                                        <li className={styles.actionItem}>
+                                            <Link href="/admin/upload-post">
+                                                <button className={`${themes.button} ${themes.buttonCreate}`}>{text.dashboard.uploadFile}</button>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                    <ul className={`${styles.list} ${styles.parent} ${styles.postsList}`}>
+                                        {alert ? (
+                                            <Alert data={alert} cancelAction={cancelAction} downloadFile={handleDownload} deletePost={deletePost} resetCounter={resetCounter} />
+                                        ) : null}
+                                        <h3>{text.dashboard.previousPosts}</h3>
+                                        {!posts.length &&
+                                            <p>{text.dashboard.noPosts}</p>}
+                                        {posts.map(({ _id, fileName, title, author, visits }) => (
+                                            <li className={styles.listItem} key={_id}>
+                                                <div>
+                                                    <Link href={`/posts/${fileName}`}>
+                                                        <a>
+                                                            <span className={styles.titleSpan}>{title}</span>
+                                                            <span> {text.dashboard.by} {author}</span>
+                                                        </a>
+                                                    </Link>
+                                                </div>
+                                                <div className={styles.btnContainer}>
+                                                    <button className={`${themes.button} ${themes.buttonCounter}`} onClick={handleReset} id={_id}>{text.dashboard.visits} {visits}</button>
+                                                    <button className={themes.button} onClick={handleDownload} id={_id}>{text.dashboard.download}</button>
+                                                    <button className={themes.button} onClick={handleEdit} id={_id}>{text.dashboard.edit}</button>
+                                                    <button className={`${themes.button} ${themes.buttonDelete}`} id={_id} name={fileName} onClick={handleDelete}>{text.dashboard.delete}</button>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )
+                        }
+                  </section>
             </Layout >
         )
     }

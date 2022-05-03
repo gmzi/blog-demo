@@ -10,6 +10,7 @@ import { grabText } from "../../lib/grabText";
 import Alert from '../../components/alert'
 import Restricted from "../../components/restricted";
 
+import themes from '../../styles/themes.module.css'
 import styles from '../../styles/dashboard.module.css'
 import utilStyles from '../../styles/utils.module.css'
 import addPostStyles from '../../components/addPostForm.module.css'
@@ -165,39 +166,38 @@ export default function WritePost() {
                 <Head>
                     <title>{data.title} - {text.writePost.writePost}</title>
                 </Head>
-                <h2>{text.writePost.newPost}</h2>
-                <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-
-                    {!published ? (
-                        <div className={`${styles.parent}`}>
-                            {status ? (
-                                <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
-                            ) : null}
-                            <div>
-                                <form className={addPostStyles.form} onChange={handleFormChange} encType="multipart/form-data">
-                                    <label htmlFor="author">{text.addPostForm.authorName}</label>
-                                    <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
-                                    <label htmlFor="description">{text.addPostForm.description}</label>
-                                    <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
-                                </form>
-                                <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
-                                    previewOptions={{
-                                        rehypePlugins: [[rehypeSanitize]]
-                                    }}
-                                />
+                <section className={themes.section}>
+                    <h2>{text.writePost.newPost}</h2>
+                        {!published ? (
+                            <div className={`${styles.parent}`}>
+                                {status ? (
+                                    <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
+                                ) : null}
+                                <div>
+                                    <form className={themes.form} onChange={handleFormChange} encType="multipart/form-data">
+                                        <label htmlFor="author">{text.addPostForm.authorName}</label>
+                                        <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
+                                        <label htmlFor="description">{text.addPostForm.description}</label>
+                                        <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
+                                    </form>
+                                    <MDEditor className={themes.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
+                                        previewOptions={{
+                                            rehypePlugins: [[rehypeSanitize]]
+                                        }}
+                                    />
+                                </div>
+                                <div className={styles.btnContainer}>
+                                    <button className={`${themes.button} ${themes.buttonPublish}`} onClick={handlePublish}>{text.writePost.publish}</button>
+                                </div>
                             </div>
-                            <div className={styles.btnContainer}>
-                                <button className={`${styles.button} ${styles.buttonPublish}`} onClick={handlePublish}>{text.writePost.publish}</button>
-                            </div>
+                        ) : (
+                            <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
+                        )}
+                        <div className={styles.btnContainer}>
+                            <Link href='/admin/dashboard'>
+                                <a>← {text.writePost.goDashboard}</a>
+                            </Link>
                         </div>
-                    ) : (
-                        <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
-                    )}
-                    <div className={styles.btnContainer}>
-                        <Link href='/admin/dashboard'>
-                            <a>← {text.writePost.goDashboard}</a>
-                        </Link>
-                    </div>
                 </section >
             </Layout >
         )

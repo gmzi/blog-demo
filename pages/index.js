@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import themes from '../styles/themes.module.css'
 import { connectToDatabase } from '../lib/mongodb'
-import { data } from '../lib/data'
+import { data, text } from '../lib/data'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
 
@@ -20,10 +20,14 @@ export default function Home({ posts }) {
           <ul className={utilStyles.list}>
             {posts.map(({ _id, fileName, title, author, date }) => (
               <li className={utilStyles.listItem} key={_id}>
-                <Link href={`/posts/${fileName}`}>
-                  {/* <a><span>{title}</span><span className={utilStyles.lightText}> {text.index.by} {author}</span></a> */}
-                  <a><span className={themes.lightText}> <Date dateString={date} /></span> <span className={utilStyles.postTitle}>{title}</span></a>
-                </Link>
+                <div className={utilStyles.dateContainer}>
+                  <span className={themes.postDate}><Date dateString={date}/></span>
+                </div>
+                <div className={utilStyles.titleContainer}>
+                  <Link href={`/posts/${fileName}`}>
+                    <a><span className={themes.postTitle}>{title}</span></a>
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>

@@ -31,14 +31,12 @@ nav button svg {
   background-color: inherit;
 }
 
-
-
-header div {
+header {
   display: block;
   width: 100%;
   border-radius: 5px;
   position: relative;
-  padding: 1rem;
+  padding: .8rem;
   margin: 0;
   transition: all 0.2s ease-in;
   text-align: center;
@@ -64,16 +62,16 @@ header div {
   color: #0070f3;
 }
 
+:root ul a {
+  color: rgba(0, 0, 0, 0.844);
+}
+
 :root button {
   background-color: inherit;
 }
 
 :root nav button svg {
   stroke: rgba(26, 26, 26, 0.623);
-}
-
-:root ul a {
-  color: rgba(0, 0, 0, 0.844);
 }
 
 :root article {
@@ -85,9 +83,10 @@ header div {
   background-color: rgb(32, 32, 32);
 }
 
-/* POST NOTES */
-:root section h2 {
-  border-top: 1px solid #eaeaea;
+/* --------------------------------------------------------- */
+/* Dashboard */
+:root header {
+  background-color: whitesmoke;
 }
 
 /* --------------------------------------------------------- */
@@ -100,15 +99,15 @@ header div {
   color: white;
 }
 
-:root form {
+/* :root form {
   border-bottom: 1px solid rgba(59, 59, 59, 0.212);
-}
+} */
 
-:root form input,
+/* :root form input,
 :root form textarea {
   background: #fff;
   border: 1px solid #bbb;
-}
+} */
 
 
 /* ------------------------------------------------------- */
@@ -151,9 +150,10 @@ header div {
   background-color: rgb(32, 32, 32);
 }
 
-/* POST NOTES */
-[data-theme='dark'] section h2 {
-  border-top: 1px solid #eaeaea;
+/* --------------------------------------------------------- */
+/* Dashboard */
+[data-theme='dark'] header {
+  background-color: rgba(245, 245, 245, 0.147);
 }
 
 /* --------------------------------------------------------- */
@@ -166,7 +166,7 @@ header div {
   color: white;
 }
 
-[data-theme='dark'] form {
+/* [data-theme='dark'] form {
   border-bottom: 1px solid rgba(59, 59, 59, 0.212);
 }
 
@@ -174,7 +174,7 @@ header div {
 [data-theme='dark'] form textarea {
   background: #fff;
   border: 1px solid #bbb;
-}
+} */
 
 
 
