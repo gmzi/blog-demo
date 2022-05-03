@@ -73,7 +73,7 @@ header div {
 
 /* code snippets */
 :root article pre {
-  background-color: rgb(240, 234, 234);
+  background-color: rgb(32, 32, 32);
 }
 
 /* POST NOTES */
@@ -83,10 +83,6 @@ header div {
 
 /* --------------------------------------------------------- */
 /* AddPostForm guidelines */
-:root ol {
-  background-color: #f0f8ff;
-}
-
 :root ol ul {
   background-color: rgb(26, 0, 0);
 }

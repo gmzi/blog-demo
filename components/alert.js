@@ -32,7 +32,7 @@ export default function Alert({ data, cancelAction, downloadFile, deletePost, re
     if (data.alert === "resetAlert") {
         return (
             <div className={styles.alert}>
-                <div className={styles.container}>
+                <div className={themes.container}>
                     <h4>{text.alert.resetCounter}</h4>
                     <p>{text.alert.thisAction}</p>
                     <div className={styles.btnContainer}>
@@ -48,7 +48,7 @@ export default function Alert({ data, cancelAction, downloadFile, deletePost, re
     if (data.alert === "deletionAlert") {
         return (
             <div className={styles.alert}>
-                <div className={styles.container}>
+                <div className={themes.container}>
                     <h4>{text.alert.deleteCannot}</h4>
                     <p>{text.alert.youMight}</p>
                     <div className={styles.btnContainer}>
@@ -63,9 +63,9 @@ export default function Alert({ data, cancelAction, downloadFile, deletePost, re
 
     if (data.alert === 'titleAlert') {
         return (
-            <div className={styles.container}>
+            <div className={themes.container}>
                 <p>{data.message}</p>
-                <Link href="/admin/create-post">
+                <Link href="/admin/upload-post">
                     <a onClick={handleCancel}>{text.alert.ok}</a>
                 </Link>
             </div>

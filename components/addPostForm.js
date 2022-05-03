@@ -170,7 +170,7 @@ export default function AddPostForm() {
                         </form>
                     )}
                     <div>
-                        <ol className={styles.ol}>
+                        <ol className={themes.guidelines}>
                             <h4>{text.addPostForm.guidelines}</h4>
                             <p>{text.addPostForm.guidelinesP}</p>
                             <li>{text.addPostForm.li1}
