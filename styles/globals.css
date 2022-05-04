@@ -78,10 +78,6 @@ header {
   color: #181818e6;
 }
 
-/* code snippets */
-:root article pre {
-  background-color: rgb(32, 32, 32);
-}
 
 /* --------------------------------------------------------- */
 /* Dashboard */
@@ -95,9 +91,9 @@ header {
   background-color: rgb(26, 0, 0);
 }
 
-:root code {
+/* :root code {
   color: white;
-}
+} */
 
 /* :root form {
   border-bottom: 1px solid rgba(59, 59, 59, 0.212);
@@ -160,10 +156,6 @@ header {
 /* AddPostForm guidelines */
 [data-theme='dark'] ol ul {
   background-color: rgb(26, 0, 0);
-}
-
-[data-theme='dark'] code {
-  color: white;
 }
 
 /* [data-theme='dark'] form {

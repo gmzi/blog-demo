@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from 'next-auth/react';
 import Layout from "../../components/layout"
 import Head from "next/head"
@@ -6,16 +6,16 @@ import Header from '../../components/header'
 import Link from "next/link"
 import { data } from "../../lib/data"
 import rehypeSanitize from "rehype-sanitize";
-import { grabText } from "../../lib/grabText";
 import Alert from '../../components/alert'
 import Restricted from "../../components/restricted";
-
+import { text } from '../../lib/data'
 import themes from '../../styles/themes.module.css'
 import styles from '../../styles/dashboard.module.css'
-import utilStyles from '../../styles/utils.module.css'
-import addPostStyles from '../../components/addPostForm.module.css'
+import { useTheme } from "next-themes";
 
-import { text } from '../../lib/data'
+// import utilStyles from '../../styles/utils.module.css'
+// import addPostStyles from '../../components/addPostForm.module.css'
+
 
 
 // -----------------------------------------------------------
@@ -38,6 +38,11 @@ const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
 export default function WritePost() {
     const { data: session } = useSession()
+
+    const [mounted, setMounted] = useState(false)
+    const {theme} = useTheme()
+
+    useEffect(() => setMounted(true), []);
 
     const textGuides = {
         title: text.writePost.title,
@@ -174,17 +179,22 @@ export default function WritePost() {
                                     <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                                 ) : null}
                                 <div>
+                                    <div data-color-mode={theme}>
+                                        <MDEditor 
+                                        className={styles.editor}
+                                        value={value} 
+                                        onChange={handleChange} 
+                                        textareaProps={{ spellCheck: true }}
+                                        previewOptions={{rehypePlugins: [[rehypeSanitize]]}}
+                                        autoFocus={true}
+                                        />
+                                    </div>
                                     <form className={themes.form} onChange={handleFormChange} encType="multipart/form-data">
                                         <label htmlFor="author">{text.addPostForm.authorName}</label>
                                         <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
                                         <label htmlFor="description">{text.addPostForm.description}</label>
                                         <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
                                     </form>
-                                    <MDEditor className={themes.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
-                                        previewOptions={{
-                                            rehypePlugins: [[rehypeSanitize]]
-                                        }}
-                                    />
                                 </div>
                                 <div className={styles.btnContainer}>
                                     <button className={`${themes.button} ${themes.buttonPublish}`} onClick={handlePublish}>{text.writePost.publish}</button>

@@ -42,6 +42,10 @@
   }
 }
 
+.editor {
+  margin: 1rem 0rem;
+}
+
 /* .button {
   border-radius: 0.3rem;
   font-size: 0.8rem;

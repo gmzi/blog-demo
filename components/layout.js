@@ -157,7 +157,6 @@ export default function Layout({ children, home, post, dashboard }) {
                     </a>
                 </Link>
             </nav>
-            
             <div className={styles.container}>
                 <main className={styles.main}>{children}</main>
                 {!home && (
