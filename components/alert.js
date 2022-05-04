@@ -74,7 +74,7 @@ export default function Alert({ data, cancelAction, downloadFile, deletePost, re
 
     if (data.alert === 'bodyAlert') {
         return (
-            <div className={styles.container}>
+            <div className={themes.alertContainer}>
                 <p>{data.message}</p>
                 {/* <Link href="/admin/write-post"> */}
                 <a onClick={handleCancel}>{text.alert.ok}</a>
@@ -87,6 +87,16 @@ export default function Alert({ data, cancelAction, downloadFile, deletePost, re
         return (
             <div className={themes.alertContainer}>
                 <p>{data.message}</p>
+            </div>
+        )
+    }
+
+    if (data.alert === 'messageAndRefresh') {
+        return (
+            <div className={themes.alertContainer}>
+                <p>{data.message}</p>
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                <span><a href="/">{text.editPost.refreshIndex}</a> to see the changes</span>
             </div>
         )
     }

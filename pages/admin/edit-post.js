@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { connectToDatabase } from "../../lib/mongodb";
 import { ObjectId } from "mongodb";
 import { useSession } from 'next-auth/react';
-import SuperEditor from '../../components/superEditor';
+import Editor from '../../components/editor';
 import Restricted from "../../components/restricted";
-import Editor from "../../components/editor";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import Header from "../../components/header";
@@ -12,7 +11,6 @@ import { data, text } from "../../lib/data";
 import Alert from "../../components/alert";
 import Link from 'next/link';
 import styles from '../../styles/dashboard.module.css'
-import utilStyles from '../../styles/utils.module.css'
 import themes from '../../styles/themes.module.css'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
@@ -62,7 +60,7 @@ export default function EditPost({ post }) {
         })
         if (response.ok) {
             // localStorage.removeItem(`blogText-${post.id}`)
-            setStatus({ alert: "messageAlert", message: `${text.editPost.changesHaveBeenSaved}` })
+            setStatus({ alert: "messageAndRefresh", message: `${text.editPost.changesHaveBeenSaved}` })
         } else {
             const errorMsg = await response.json();
             setStatus({ alert: "bodyAlert", message: errorMsg.error })
@@ -104,17 +102,11 @@ export default function EditPost({ post }) {
                 <Header />
                 <section className={themes.section}>
                     {status ? (
-                        <>
-                            <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
-                            <div className={styles.btnContainer}>
-                                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                                <a href="/"> {text.editPost.refreshIndex} </a>
-                            </div>
-                        </>
+                        <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                     ) : (
                         // <Editor postBody={post.body} postAuthorName={post.authorName} postDescription={post.description} updatePost={updatePost} />
-                        <>
-                            <SuperEditor postBody={value} handleData={handleData}/>
+                        <div>
+                            <Editor postBody={value} handleData={handleData}/>
 
                             <form className={themes.form} encType="multipart/form-data">
                                 <label htmlFor="title">{text.addPostForm.title}</label>
@@ -127,11 +119,11 @@ export default function EditPost({ post }) {
                             <div className={styles.btnContainer}>
                                 <button className={`${themes.button} ${themes.buttonPublish}`} onClick={handleUpdate}>{text.editor.saveChanges}</button>
                             </div>
-                        </>
+                        </div>
                     )
                     }
                 </section>
-                <div>
+                <div className={styles.btnContainer}>
                     <Link href='/admin/dashboard'>
                         <a>← {text.addPostForm.goDashboard}</a>
                     </Link>

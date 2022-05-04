@@ -5,45 +5,24 @@ import Head from "next/head"
 import Header from '../../components/header'
 import Link from "next/link"
 import { data } from "../../lib/data"
-// import rehypeSanitize from "rehype-sanitize";
 import Alert from '../../components/alert'
 import Restricted from "../../components/restricted";
 import { text } from '../../lib/data'
 import themes from '../../styles/themes.module.css'
 import styles from '../../styles/dashboard.module.css'
-// import { useTheme } from "next-themes";
-import SuperEditor from "../../components/superEditor";
-// -----------------------------------------------------------
-// NEXT.JS configuration for @uiw
-import "@uiw/react-md-editor/markdown-editor.css";
-import "@uiw/react-markdown-preview/markdown.css";
-import dynamic from "next/dynamic";
-
-const MDEditor = dynamic(
-    () => import("@uiw/react-md-editor"),
-    {
-        loading: () => <p>{text.writePost.loading}</p>,
-        ssr: false
-    },
-);
-// ------------------------------------------------------------ 
+import Editor from "../../components/editor";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
 export default function WritePost() {
-    const { data: session } = useSession()
-
-    // const [mounted, setMounted] = useState(false)
-    // const {theme} = useTheme()
-
-    // useEffect(() => setMounted(true), []);
 
     const textGuides = {
         title: text.writePost.title,
         body: text.writePost.body
     }
-
+    
+    const { data: session } = useSession()
     const [value, setValue] = useState(`${textGuides.title} \n ${textGuides.body}`);
     const [authorName, setAuthorName] = useState()
     const [description, setDescription] = useState()
@@ -174,17 +153,8 @@ export default function WritePost() {
                                     <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                                 ) : null}
                                 <div>
-                                    {/* <div data-color-mode={theme}>
-                                        <MDEditor 
-                                        className={styles.editor}
-                                        value={value} 
-                                        onChange={handleChange} 
-                                        textareaProps={{ spellCheck: true }}
-                                        previewOptions={{rehypePlugins: [[rehypeSanitize]]}}
-                                        autoFocus={true}
-                                        />
-                                    </div> */}
-                                    <SuperEditor postBody={value} handleData={handleData}/>
+
+                                    <Editor postBody={value} handleData={handleData}/>
 
                                     <form className={themes.form} onChange={handleFormChange} encType="multipart/form-data">
                                         <label htmlFor="author">{text.addPostForm.authorName}</label>
