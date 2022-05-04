@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { connectToDatabase } from "../../lib/mongodb";
 import { ObjectId } from "mongodb";
 import { useSession } from 'next-auth/react';
-import SuperEditor from '../../components/superEditor';
 import Restricted from "../../components/restricted";
 import Editor from "../../components/editor";
 import Layout from "../../components/layout";
@@ -12,7 +11,6 @@ import { data, text } from "../../lib/data";
 import Alert from "../../components/alert";
 import Link from 'next/link';
 import styles from '../../styles/dashboard.module.css'
-import utilStyles from '../../styles/utils.module.css'
 import themes from '../../styles/themes.module.css'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
@@ -21,21 +19,16 @@ const URL = process.env.NEXT_PUBLIC_URL;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
-export default function EditPost({ post }) {
+export default function EditPostDef({ post }) {
     const { data: session } = useSession()
-    const [value, setValue] = useState(post.body)
-    const [title, setTitle] = useState(post.title)
-    const [authorName, setAuthorName] = useState(post.authorName)
-    const [description, setDescription] = useState(post.description)
     const [status, setStatus] = useState()
-    const [unsavedChanges, setUnsavedChanges] = useState();
 
     function cancelAction() {
         setStatus(null)
     }
 
-    const updatePost = async (newText, newTitle, newAuthorName, newDescription) => {
-        if (newText === post.body && newTitle === post.title && newAuthorName === post.authorName && newDescription === post.description) {
+    const updatePost = async (newText, newAuthorName, newDescription) => {
+        if (newText === post.body && newAuthorName === post.authorName && newDescription === post.description) {
             setStatus({ alert: "bodyAlert", message: `${text.editPost.noModifications}` })
             return
         }
@@ -46,7 +39,6 @@ export default function EditPost({ post }) {
             id: post.id,
             fileName: post.fileName,
             newText: newText,
-            newTitle: newTitle,
             newAuthorName: newAuthorName,
             newDescription: newDescription
         }
@@ -70,31 +62,6 @@ export default function EditPost({ post }) {
         return;
     }
 
-    const handleFormChange = (e) => {
-        setUnsavedChanges(true)
-        if (e.target){
-            if(e.target.name === 'title'){
-                setTitle(e.target.value)
-            } 
-            if(e.target.name === 'author'){
-                setAuthorName(e.target.value)
-            } 
-            if(e.target.name === 'description'){
-                setDescription(e.target.value)
-            }
-        } 
-        return;
-    }
-
-    const handleData = (data) => {
-        setValue(data)
-    }
-
-    const handleUpdate = () => {
-        setUnsavedChanges(false)
-        updatePost(value, title, authorName, description)
-    }
-
     if (session) {
         return (
             <Layout home dashboard>
@@ -112,22 +79,8 @@ export default function EditPost({ post }) {
                             </div>
                         </>
                     ) : (
-                        // <Editor postBody={post.body} postAuthorName={post.authorName} postDescription={post.description} updatePost={updatePost} />
-                        <>
-                            <SuperEditor postBody={value} handleData={handleData}/>
-
-                            <form className={themes.form} encType="multipart/form-data">
-                                <label htmlFor="title">{text.addPostForm.title}</label>
-                                <input type="text" name="title" placeholder={text.addPostForm.title} value={title} onChange={handleFormChange} />
-                                <label htmlFor="author">{text.addPostForm.authorName}</label>
-                                <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} value={authorName} onChange={handleFormChange} />
-                                <label htmlFor="description">{text.addPostForm.description}</label>
-                                <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} onChange={handleFormChange} />
-                            </form>
-                            <div className={styles.btnContainer}>
-                                <button className={`${themes.button} ${themes.buttonPublish}`} onClick={handleUpdate}>{text.editor.saveChanges}</button>
-                            </div>
-                        </>
+                        // <Editor body={post.body} id={post.id} authorName={post.authorName} description={post.description} updatePost={updatePost} />
+                        <Editor postBody={post.body} postAuthorName={post.authorName} postDescription={post.description} updatePost={updatePost} />
                     )
                     }
                 </section>

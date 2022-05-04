@@ -29,8 +29,10 @@ const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
 export default function Editor({ postBody, postAuthorName, postDescription, updatePost }) {
     const [value, setValue] = useState(postBody);
+
     const [authorName, setAuthorName] = useState(postAuthorName)
     const [description, setDescription] = useState(postDescription)
+    
     const [status, setStatus] = useState();
     const [published, setPublished] = useState();
     const router = useRouter()
@@ -107,10 +109,12 @@ export default function Editor({ postBody, postAuthorName, postDescription, upda
                             <label htmlFor="description">{text.addPostForm.description}</label>
                             <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} onChange={handleChange} />
                         </form>
-                        <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
-                            previewOptions={{
-                                rehypePlugins: [[rehypeSanitize]]
-                            }}
+                        <MDEditor 
+                        className={styles.editor} 
+                        value={value} 
+                        onChange={handleChange} 
+                        textareaProps={{ spellCheck: true }}
+                        previewOptions={{rehypePlugins: [[rehypeSanitize]]}}
                         />
                     </div>
                     <div className={styles.btnContainer}>

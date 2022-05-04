@@ -14,3 +14,7 @@
 .btnContainer {
     margin: .5rem 0rem;
 }
+
+.btnContainer button {
+    margin: 0rem .2rem;
+}

@@ -5,19 +5,14 @@ import Head from "next/head"
 import Header from '../../components/header'
 import Link from "next/link"
 import { data } from "../../lib/data"
-import rehypeSanitize from "rehype-sanitize";
+// import rehypeSanitize from "rehype-sanitize";
 import Alert from '../../components/alert'
 import Restricted from "../../components/restricted";
 import { text } from '../../lib/data'
 import themes from '../../styles/themes.module.css'
 import styles from '../../styles/dashboard.module.css'
-import { useTheme } from "next-themes";
-
-// import utilStyles from '../../styles/utils.module.css'
-// import addPostStyles from '../../components/addPostForm.module.css'
-
-
-
+// import { useTheme } from "next-themes";
+import SuperEditor from "../../components/superEditor";
 // -----------------------------------------------------------
 // NEXT.JS configuration for @uiw
 import "@uiw/react-md-editor/markdown-editor.css";
@@ -39,10 +34,10 @@ const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 export default function WritePost() {
     const { data: session } = useSession()
 
-    const [mounted, setMounted] = useState(false)
-    const {theme} = useTheme()
+    // const [mounted, setMounted] = useState(false)
+    // const {theme} = useTheme()
 
-    useEffect(() => setMounted(true), []);
+    // useEffect(() => setMounted(true), []);
 
     const textGuides = {
         title: text.writePost.title,
@@ -68,12 +63,12 @@ export default function WritePost() {
         }
     }, [])
 
-    const handleChange = (e) => {
+    const handleData = (data) => {
         localStorage.setItem(
             'postText',
-            JSON.stringify(e)
+            JSON.stringify(data)
         );
-        setValue(e)
+        setValue(data)
     }
 
     const handleFormChange = (e) => {
@@ -179,7 +174,7 @@ export default function WritePost() {
                                     <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                                 ) : null}
                                 <div>
-                                    <div data-color-mode={theme}>
+                                    {/* <div data-color-mode={theme}>
                                         <MDEditor 
                                         className={styles.editor}
                                         value={value} 
@@ -188,7 +183,9 @@ export default function WritePost() {
                                         previewOptions={{rehypePlugins: [[rehypeSanitize]]}}
                                         autoFocus={true}
                                         />
-                                    </div>
+                                    </div> */}
+                                    <SuperEditor postBody={value} handleData={handleData}/>
+
                                     <form className={themes.form} onChange={handleFormChange} encType="multipart/form-data">
                                         <label htmlFor="author">{text.addPostForm.authorName}</label>
                                         <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />

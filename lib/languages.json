@@ -62,7 +62,7 @@
         "editor": {
             "loading": "Cargando el editor...",
             "saveChanges": "Guardar cambios",
-            "youHaveUnsaved": "Tienes cambios sin guardar, seguro que quieres salir de esta página?"
+            "youHaveUnpublished": "Tienes cambios sin publicar, seguro que quieres salir de esta página?"
         },
         "editPost": {
             "editPost": "editar post",
@@ -193,7 +193,7 @@
         "editor": {
             "loading": "Loading editor...",
             "saveChanges": "Save changes",
-            "youHaveUnsaved": "You have unsaved changes, are you sure you want to leave this page?"
+            "youHaveUnpublished": "You have unpublished changes, are you sure you want to leave this page?"
         },
         "editPost": {
             "editPost": "edit post",
@@ -242,7 +242,8 @@
             "errorFormatting": "Error formatting data, please check guidelines and try again",
             "postPublished": "Post published, congratulations!!!!",
             "failedPublishing": "Failed publishing, please edit file and try again",
-            "here": "here"
+            "here": "here",
+            "title": "title"
         },
         "previewPost": {
             "refreshIndex": "refresh index page",

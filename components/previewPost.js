@@ -3,6 +3,7 @@ import Head from "next/head";
 import Layout, { siteTitle } from "./layout";
 import styles from './previewPost.module.css'
 import utilStyles from '../styles/utils.module.css'
+import themes from '../styles/themes.module.css'
 import dashboardStyles from '../styles/dashboard.module.css'
 import Alert from './alert';
 import PostComponent from './postComponent';
