@@ -54,9 +54,9 @@ header {
   border-bottom: 1px solid rgba(217, 217, 233, 0.438);
 }
 
-:root {
+/* :root {
   background-color: #FFFFFF;
-}
+} */
 
 :root a {
   color: #0070f3;
@@ -142,45 +142,3 @@ header {
 [data-theme='dark'] ol ul {
   background-color: rgb(26, 0, 0);
 }
-
-/* [data-theme='dark'] form {
-  border-bottom: 1px solid rgba(59, 59, 59, 0.212);
-}
-
-[data-theme='dark'] form input,
-[data-theme='dark'] form textarea {
-  background: #fff;
-  border: 1px solid #bbb;
-} */
-
-
-
-/* [data-theme='dark'] nav, 
-[data-theme='dark'] footer {
-  background-color: gray;
-}
-
-[data-theme='dark'] {
-  background-color: #000;
-  color: #fff;
-  font-weight: bolder;
-}
-
-[data-theme='dark'] ul a {
-  color: white;
-} 
-
-[data-theme='dark'] a {
-  color:#d0cfcf;
-}
-
-[data-theme='dark'] .title {
-  color: white;
-}
-
-[data-theme='dark'] button svg {
-  stroke: white;
-} */
-
-
-

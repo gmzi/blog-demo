@@ -153,7 +153,7 @@ export default function WritePost() {
                                     <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                                 ) : null}
                                 <div>
-
+                                    
                                     <Editor postBody={value} handleData={handleData}/>
 
                                     <form className={themes.form} onChange={handleFormChange} encType="multipart/form-data">

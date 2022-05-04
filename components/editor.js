@@ -78,3 +78,8 @@ export default function Editor({ postBody, handleData }) {
         </div>
     )
 }
+
+/*
+TODO: when system is set to light and app is set to dark, Editor will
+show a white background color, fix this. 
+*/
