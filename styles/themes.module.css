@@ -8,18 +8,6 @@
     padding: 1rem;
 }
 
-.guidelines {
-    font-size: 0.9rem;
-    border-radius: 5px;
-    margin: .5rem;
-    padding: 1rem;
-}
-
-.guidelines li {
-    margin: 0rem 1rem;
-    padding: .5rem;
-}
-
 .logoContainer { 
     border-radius: 3px;
     padding: .8rem 0rem;
@@ -61,8 +49,12 @@
     background-color: rgba(32, 32, 32, 0.923);
 }
 
-.postContent code {
-    color: rgba(236, 235, 235, 0.903);
+.postContent code,
+.guidelines code {
+    color: rgba(255, 255, 255, 0.953);
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+    font-size: .8rem;
 }
 
 .postContentHeadingLg,
@@ -137,6 +129,21 @@
   height: 2rem;
 }
 
+.guidelinesContainer {
+    border-top: 1px solid rgba(156, 156, 156, 0.564);
+}
+
+.guidelines {
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.guidelines li {
+    margin: 0rem 1rem;
+    padding: .3rem;
+}
+
 /* --------------------------------------- */
 /* THEME LIGHT */
 
@@ -156,10 +163,6 @@
 .sessionStatus {
     background-color: rgba(0, 0, 0, 0.05);
   }
-
-.guidelines {
-    background-color: #f0f8ff;
-}
 
 .logoContainer:hover {
     text-decoration: underline 3px solid #0000ffc9;
@@ -243,6 +246,10 @@
     border: 1px solid #bbb
 }
 
+[data-theme='light'] .guidelines {
+    background-color: #f0f8ff;
+}
+
 /* --------------------------------------- */
 /* THEME DARK */
 
@@ -282,7 +289,7 @@
 }
 
 [data-theme='dark'] .buttonPreview {
-    color: black;
+    color: rgba(255, 255, 255, 0.944);
     border: 1px solid rgba(177, 248, 253, 0.849);
 }
 
@@ -329,6 +336,10 @@
 [data-theme='dark'] .form input,
 [data-theme='dark'] .form textarea {
     border: 1px solid rgba(187, 187, 187, 0.345)
+}
+
+[data-theme='dark'] .guidelines {
+    background-color: #3d4043ee;
 }
 
 /* [data-theme='dark'] .editor div {
