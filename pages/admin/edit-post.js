@@ -100,6 +100,7 @@ export default function EditPost({ post }) {
                 </Head>
                 <Header />
                 <section>
+                    <h2>{text.editPost.editPost}</h2>
                     {status ? (
                         <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                     ) : (

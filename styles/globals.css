@@ -187,13 +187,6 @@ article pre {
   padding: 1.5rem;
 }
 
-code {
-  color: rgba(232, 229, 229, 0.888);
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-    font-size: .8rem;
-}
-
 span circle {
   fill: var(--color-fill-circle)
 }
@@ -305,10 +298,6 @@ button:active {
 /* ------------------------------------------- */
 .editor {
   margin: 1rem 0rem;
-}
-
-.editor code {
-  color: var(--color-editor-code);
 }
 
 /* ------------------------------------------- */

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { text } from "../lib/data";
 import rehypeSanitize from "rehype-sanitize";
-import styles from '../styles/dashboard.module.css'
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 // -----------------------------------------------------------
@@ -25,9 +24,9 @@ export default function Editor({ postBody, handleData }) {
     const [mounted, setMounted] = useState(false)
     const {theme} = useTheme()
 
-    useEffect(() => setMounted(true), []);
+    useEffect(() => setValue(postBody), [postBody])
 
-    useEffect(() => setValue(postBody), [postBody]);
+    useEffect(() => setMounted(true), []);
 
     useEffect(() => {
         const confirmationMessage = `${text.editor.youHaveUnpublished}`;
@@ -77,8 +76,3 @@ export default function Editor({ postBody, handleData }) {
         </div>
     )
 }
-
-/*
-TODO: when system is set to light and app is set to dark, Editor will
-show a white background color, same thing happens on authentication page. 
-*/
