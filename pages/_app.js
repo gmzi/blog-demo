@@ -5,7 +5,11 @@ import { ThemeProvider } from 'next-themes'
 export default function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <ThemeProvider>
+      <ThemeProvider
+      enableSystem={true}
+      defaultTheme="system"
+      enableColorScheme={true}
+      >
         <Component {...pageProps} />  
       </ThemeProvider>
     </SessionProvider>
