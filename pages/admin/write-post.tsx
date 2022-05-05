@@ -8,7 +8,6 @@ import { data } from "../../lib/data"
 import Alert from '../../components/alert'
 import Restricted from "../../components/restricted";
 import { text } from '../../lib/data'
-import themes from '../../styles/themes.module.css'
 import styles from '../../styles/dashboard.module.css'
 import Editor from "../../components/editor";
 
@@ -145,7 +144,7 @@ export default function WritePost() {
                 <Head>
                     <title>{data.title} - {text.writePost.writePost}</title>
                 </Head>
-                <section className={themes.section}>
+                <section>
                     <h2>{text.writePost.newPost}</h2>
                         {!published ? (
                             <div className={`${styles.parent}`}>
@@ -156,7 +155,7 @@ export default function WritePost() {
                                     
                                     <Editor postBody={value} handleData={handleData}/>
 
-                                    <form className={themes.form} onChange={handleFormChange} encType="multipart/form-data">
+                                    <form onChange={handleFormChange} encType="multipart/form-data">
                                         <label htmlFor="author">{text.addPostForm.authorName}</label>
                                         <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
                                         <label htmlFor="description">{text.addPostForm.description}</label>
@@ -164,7 +163,7 @@ export default function WritePost() {
                                     </form>
                                 </div>
                                 <div className={styles.btnContainer}>
-                                    <button className={`${themes.button} ${themes.buttonPublish}`} onClick={handlePublish}>{text.writePost.publish}</button>
+                                    <button className="btnPublish" onClick={handlePublish}>{text.writePost.publish}</button>
                                 </div>
                             </div>
                         ) : (

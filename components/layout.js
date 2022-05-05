@@ -1,12 +1,9 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
-import dashboardStyles from '../styles/dashboard.module.css'
-import themes from '../styles/themes.module.css'
 import Link from 'next/link'
 import Logo from '../components/logo'
 import LogoAdmin from '../components/logo-admin'
 import { useTheme } from 'next-themes'
-import Footer from './Footer'
 import { data, text } from '../lib/data'
 import { useState, useEffect } from 'react'
 
@@ -111,7 +108,7 @@ export default function Layout({ children, home, post, dashboard }) {
                 </Link>
                 
                 {mounted && (
-                <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+                <button className="buttonTheme" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
                     {/* {theme === 'light' ? <span>&#x263E;</span> : <span>&#x2600;</span>} */}
                     {/* {theme === 'light' ? `${text.theme.dark}` : `${text.theme.light}`} */}
                     {theme === 'light' ? (

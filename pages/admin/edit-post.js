@@ -11,7 +11,6 @@ import { data, text } from "../../lib/data";
 import Alert from "../../components/alert";
 import Link from 'next/link';
 import styles from '../../styles/dashboard.module.css'
-import themes from '../../styles/themes.module.css'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
 const API_URL = process.env.NEXT_PUBLIC_BASE_URL;
@@ -100,15 +99,14 @@ export default function EditPost({ post }) {
                     <title>{data.title} - {text.editPost.editPost} </title>
                 </Head>
                 <Header />
-                <section className={themes.section}>
+                <section>
                     {status ? (
                         <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
                     ) : (
-                        // <Editor postBody={post.body} postAuthorName={post.authorName} postDescription={post.description} updatePost={updatePost} />
                         <div>
                             <Editor postBody={value} handleData={handleData}/>
 
-                            <form className={themes.form} encType="multipart/form-data">
+                            <form encType="multipart/form-data">
                                 <label htmlFor="title">{text.addPostForm.title}</label>
                                 <input type="text" name="title" placeholder={text.addPostForm.title} value={title} onChange={handleFormChange} />
                                 <label htmlFor="author">{text.addPostForm.authorName}</label>
@@ -117,7 +115,7 @@ export default function EditPost({ post }) {
                                 <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} onChange={handleFormChange} />
                             </form>
                             <div className={styles.btnContainer}>
-                                <button className={`${themes.button} ${themes.buttonPublish}`} onClick={handleUpdate}>{text.editor.saveChanges}</button>
+                                <button className="btnPublish" onClick={handleUpdate}>{text.editor.saveChanges}</button>
                             </div>
                         </div>
                     )

@@ -2,9 +2,8 @@ import Link from 'next/link'
 import Date from '../components/date'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import themes from '../styles/themes.module.css'
 import { connectToDatabase } from '../lib/mongodb'
-import { data, text } from '../lib/data'
+import { data } from '../lib/data'
 
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION;
 
@@ -12,7 +11,7 @@ export default function Home({ posts }) {
 
   return (
     <Layout home>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section>
         <h1 style={{display: "none"}}>{data.title}</h1>
         {!posts.length ? (
           <p>No posts yet...</p>
@@ -21,11 +20,11 @@ export default function Home({ posts }) {
             {posts.map(({ _id, fileName, title, author, date }) => (
               <li className={utilStyles.listItem} key={_id}>
                 <div className={utilStyles.dateContainer}>
-                  <span className={themes.postDate}><Date dateString={date}/></span>
+                  <span className="postDate"><Date dateString={date}/></span>
                 </div>
                 <div className={utilStyles.titleContainer}>
                   <Link href={`/posts/${fileName}`}>
-                    <a><span className={themes.postTitle}>{title}</span></a>
+                    <a><span>{title}</span></a>
                   </Link>
                 </div>
               </li>

@@ -4,9 +4,7 @@ import { data, text } from '../lib/data';
 import { useRouter } from 'next/router';
 import Head from "next/head";
 import Link from 'next/link';
-import utilStyles from '../styles/utils.module.css'
 import styles from './addPostForm.module.css'
-import themes from '../styles/themes.module.css'
 import dashboardStyles from '../styles/dashboard.module.css'
 import PreviewPost from './previewPost';
 import Header from './header';
@@ -147,7 +145,7 @@ export default function AddPostForm() {
                     <title>{data.title} - {text.addPostForm.addPost}</title>
                 </Head>
                 <Header />
-                <section className={themes.section}>
+                <section>
                     <h1>{text.addPostForm.createNew}</h1>
                     {emptyField &&
                         <Alert data={emptyField} />
@@ -157,7 +155,7 @@ export default function AddPostForm() {
                             <Alert data={alert} cancelDeletion={refreshData} downloadFile={null} deletePost={null} />
                         </div>
                     ) : (
-                        <form className={themes.form} onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
+                        <form onSubmit={handleSubmit} onChange={handleChange} method="post" encType="multipart/form-data">
                             <label htmlFor="author">{text.addPostForm.authorName}</label>
                             <input type="text" name="author" placeholder={text.addPostForm.authorPlaceholder} />
                             <label htmlFor="description">{text.addPostForm.description}</label>
@@ -165,12 +163,12 @@ export default function AddPostForm() {
                             <label className={styles.uploadBtn} htmlFor="myFile">{text.addPostForm.file}</label>
                             <input className={dashboardStyles.button} type="file" name="myFile" accept=".md" />
                             <div className={styles.buttonPreviewContainer}>
-                                <button className={`${themes.button} ${themes.buttonPreview}`} type="submit">{text.addPostForm.preview}</button>
+                                <button className="btnPreview" type="submit">{text.addPostForm.preview}</button>
                             </div>
                         </form>
                     )}
-                    <div className={themes.guidelinesContainer}>
-                        <ol className={themes.guidelines}>
+                    <div className="guidelinesContainer">
+                        <ol className="guidelines">
                             <h4>{text.addPostForm.guidelines}</h4>
                             <p>{text.addPostForm.guidelinesP}</p>
                             <li>{text.addPostForm.li1}
@@ -200,7 +198,7 @@ export default function AddPostForm() {
                                 </Link>
                             </li>
                             <li>
-                                <button className={`${dashboardStyles.button} ${dashboardStyles.buttonDownload}`} onClick={handleDownload}>{text.addPostForm.downloadSample}</button>
+                                <button className="btnDownload" onClick={handleDownload}>{text.addPostForm.downloadSample}</button>
                             </li>
                         </ol>
                     </div>

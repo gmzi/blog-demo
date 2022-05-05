@@ -64,11 +64,10 @@ export default function Editor({ postBody, handleData }) {
         return;
     }
 
-    console.log(theme)
     return (
         <div data-color-mode={theme}>
             <MDEditor 
-            className={styles.editor}
+            className="editor"
             value={value} 
             onChange={handleChange} 
             textareaProps={{ spellCheck: true }}

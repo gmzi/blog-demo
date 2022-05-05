@@ -5,9 +5,7 @@ import Link from 'next/link'
 import Alert from '../../components/alert';
 import Layout from '../../components/layout';
 import { data } from '../../lib/data';
-import utilStyles from '../../styles/utils.module.css'
 import styles from '../../styles/dashboard.module.css'
-import themes from '../../styles/themes.module.css'
 import { connectToDatabase } from '../../lib/mongodb'
 import Header from '../../components/header'
 import { useSession, getSession } from 'next-auth/react';
@@ -151,7 +149,7 @@ ${postData.body}`
                 <Head>
                     <title>{data.title}-{text.dashboard.dashboard}</title>
                 </Head>
-                <section className={themes.section}>
+                <section>
                     <h2>{text.dashboard.dashboard}</h2>
                         {
                             isRefreshing ? (
@@ -163,12 +161,12 @@ ${postData.body}`
                                         <li className={styles.actionItem}>
                                             <Link href="/admin/write-post">
                                                 {/* ADD THEME STYLE FOR <A> TAG */}
-                                                <button className={`${themes.button} ${themes.buttonCreate}`}>{text.dashboard.writeInEditor}</button>
+                                                <button className="btnCreate">{text.dashboard.writeInEditor}</button>
                                             </Link>
                                         </li>
                                         <li className={styles.actionItem}>
                                             <Link href="/admin/upload-post">
-                                                <button className={`${themes.button} ${themes.buttonCreate}`}>{text.dashboard.uploadFile}</button>
+                                                <button className="btnCreate">{text.dashboard.uploadFile}</button>
                                             </Link>
                                         </li>
                                     </ul>
@@ -190,10 +188,10 @@ ${postData.body}`
                                                     </Link>
                                                 </div>
                                                 <div className={styles.btnContainer}>
-                                                    <button className={`${themes.button} ${themes.buttonCounter}`} onClick={handleReset} id={_id}>{text.dashboard.visits} {visits}</button>
-                                                    <button className={themes.button} onClick={handleDownload} id={_id}>{text.dashboard.download}</button>
-                                                    <button className={themes.button} onClick={handleEdit} id={_id}>{text.dashboard.edit}</button>
-                                                    <button className={`${themes.button} ${themes.buttonDelete}`} id={_id} name={fileName} onClick={handleDelete}>{text.dashboard.delete}</button>
+                                                    <button className="btnCounter" onClick={handleReset} id={_id}>{text.dashboard.visits} {visits}</button>
+                                                    <button className="btnDownload" onClick={handleDownload} id={_id}>{text.dashboard.download}</button>
+                                                    <button className="btnEdit" onClick={handleEdit} id={_id}>{text.dashboard.edit}</button>
+                                                    <button className="btnDelete" id={_id} name={fileName} onClick={handleDelete}>{text.dashboard.delete}</button>
                                                 </div>
                                             </li>
                                         ))}

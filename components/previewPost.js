@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from "next/head";
 import Layout, { siteTitle } from "./layout";
 import styles from './previewPost.module.css'
 import utilStyles from '../styles/utils.module.css'
-import themes from '../styles/themes.module.css'
 import dashboardStyles from '../styles/dashboard.module.css'
 import Alert from './alert';
 import PostComponent from './postComponent';
 import { text } from '../lib/data'
-
-// import { parseMdToHtml } from "../lib/posts";
-
 
 export default function PreviewPost({ post, publish, restart, publishStatus }) {
 
@@ -72,7 +68,7 @@ export default function PreviewPost({ post, publish, restart, publishStatus }) {
                     <label htmlFor="btn-publish">{text.previewPost.promptPublish}</label>
                     <button className={`${dashboardStyles.button} ${dashboardStyles.buttonPublish}`} onClick={handlePublish} name="btn-publish">{text.previewPost.publish}</button>
                     <label htmlFor="btn-restart">{text.previewPost.promptStartOver}</label>
-                    <button className={`${dashboardStyles.button} ${dashboardStyles.buttonStartOver}`} onClick={handleRestart} name="btn-restart">{text.previewPost.startOver}</button>
+                    <button className="button btnStartOver" onClick={handleRestart} name="btn-restart">{text.previewPost.startOver}</button>
                 </div>
                 {/* <div className={styles.articleContainer}>
                     <PostComponent post={post} />
