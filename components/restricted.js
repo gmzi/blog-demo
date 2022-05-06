@@ -2,8 +2,6 @@ import Layout from "./layout";
 import { data } from "../lib/data";
 import Head from "next/head";
 import Header from "./header";
-import utilStyles from '/styles/utils.module.css'
-import styles from '/styles/dashboard.module.css'
 
 export default function Restricted() {
     return (
