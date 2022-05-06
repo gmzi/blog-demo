@@ -12,7 +12,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_URL;
 export default function Layout({ children, home, post, dashboard }) {
 
     const [mounted, setMounted] = useState(false);
-    const {theme, setTheme} = useTheme();
+    const {resolvedTheme, setTheme} = useTheme();
 
     useEffect(() => setMounted(true), []);
 
@@ -108,8 +108,8 @@ export default function Layout({ children, home, post, dashboard }) {
                 </Link>
                 
                 {mounted && (
-                <button className="buttonTheme" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-                    {theme === 'light' ? (
+                <button className="buttonTheme" onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}>
+                    {resolvedTheme === 'light' ? (
                         <svg
                         height="100%" 
                         width="100%"  
