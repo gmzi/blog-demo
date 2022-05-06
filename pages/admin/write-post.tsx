@@ -1,48 +1,27 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from 'next-auth/react';
 import Layout from "../../components/layout"
 import Head from "next/head"
 import Header from '../../components/header'
 import Link from "next/link"
 import { data } from "../../lib/data"
-import rehypeSanitize from "rehype-sanitize";
-import { grabText } from "../../lib/grabText";
 import Alert from '../../components/alert'
 import Restricted from "../../components/restricted";
-
-import styles from '../../styles/dashboard.module.css'
-import utilStyles from '../../styles/utils.module.css'
-import addPostStyles from '../../components/addPostForm.module.css'
-
 import { text } from '../../lib/data'
-
-
-// -----------------------------------------------------------
-// NEXT.JS configuration for @uiw
-import "@uiw/react-md-editor/markdown-editor.css";
-import "@uiw/react-markdown-preview/markdown.css";
-import dynamic from "next/dynamic";
-
-const MDEditor = dynamic(
-    () => import("@uiw/react-md-editor"),
-    {
-        loading: () => <p>{text.writePost.loading}</p>,
-        ssr: false
-    },
-);
-// ------------------------------------------------------------ 
+import styles from '../../styles/dashboard.module.css'
+import Editor from "../../components/editor";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
 
 export default function WritePost() {
-    const { data: session } = useSession()
 
     const textGuides = {
         title: text.writePost.title,
         body: text.writePost.body
     }
-
+    
+    const { data: session } = useSession()
     const [value, setValue] = useState(`${textGuides.title} \n ${textGuides.body}`);
     const [authorName, setAuthorName] = useState()
     const [description, setDescription] = useState()
@@ -62,12 +41,12 @@ export default function WritePost() {
         }
     }, [])
 
-    const handleChange = (e) => {
+    const handleData = (data) => {
         localStorage.setItem(
             'postText',
-            JSON.stringify(e)
+            JSON.stringify(data)
         );
-        setValue(e)
+        setValue(data)
     }
 
     const handleFormChange = (e) => {
@@ -161,43 +140,40 @@ export default function WritePost() {
 
         return (
             <Layout home dashboard>
-                <Header />
                 <Head>
                     <title>{data.title} - {text.writePost.writePost}</title>
                 </Head>
-                <h2>{text.writePost.newPost}</h2>
-                <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+                <Header />
+                <section>
+                    <h2>{text.writePost.newPost}</h2>
+                        {!published ? (
+                            <div className={`${styles.parent}`}>
+                                {status ? (
+                                    <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
+                                ) : null}
+                                <div>
+                                    
+                                    <Editor postBody={value} handleData={handleData}/>
 
-                    {!published ? (
-                        <div className={`${styles.parent}`}>
-                            {status ? (
-                                <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
-                            ) : null}
-                            <div>
-                                <form className={addPostStyles.form} onChange={handleFormChange} encType="multipart/form-data">
-                                    <label htmlFor="author">{text.addPostForm.authorName}</label>
-                                    <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
-                                    <label htmlFor="description">{text.addPostForm.description}</label>
-                                    <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
-                                </form>
-                                <MDEditor className={styles.editor} value={value} onChange={handleChange} textareaProps={{ spellCheck: true }}
-                                    previewOptions={{
-                                        rehypePlugins: [[rehypeSanitize]]
-                                    }}
-                                />
+                                    <form onChange={handleFormChange} encType="multipart/form-data">
+                                        <label htmlFor="author">{text.addPostForm.authorName}</label>
+                                        <input type="text" name="author" placeholder={`(${text.addPostForm.optional})`} value={authorName} />
+                                        <label htmlFor="description">{text.addPostForm.description}</label>
+                                        <textarea id="description" name="description" placeholder={`(${text.addPostForm.optional})`} value={description} />
+                                    </form>
+                                </div>
+                                <div className={styles.btnContainer}>
+                                    <button className="btnPublish" onClick={handlePublish}>{text.writePost.publish}</button>
+                                </div>
                             </div>
-                            <div className={styles.btnContainer}>
-                                <button className={`${styles.button} ${styles.buttonPublish}`} onClick={handlePublish}>{text.writePost.publish}</button>
-                            </div>
+                        ) : (
+                            <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
+                        )}
+                        <div className={styles.btnContainer}>
+                            <Link href='/admin/dashboard'>
+                                <a>← {text.writePost.goDashboard}</a>
+                            </Link>
                         </div>
-                    ) : (
-                        <Alert data={status} cancelAction={cancelAction} downloadFile={undefined} deletePost={undefined} resetCounter={undefined} />
-                    )}
-                    <div className={styles.btnContainer}>
-                        <Link href='/admin/dashboard'>
-                            <a>← {text.writePost.goDashboard}</a>
-                        </Link>
-                    </div>
                 </section >
             </Layout >
         )

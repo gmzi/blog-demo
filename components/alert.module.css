@@ -11,27 +11,10 @@
     justify-content: center;
 }
 
-.container {
-    height: 98%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    border: 5px solid rgba(109, 109, 243, 0.432);
-    background-color: white;
-    padding: 1rem;
-}
-
-.container h4 {
-    margin: 0rem 0rem;
-}
-
-.container p {
-    margin: .1rem .5rem;
-    font-size: medium
-}
-
 .btnContainer {
     margin: .5rem 0rem;
+}
+
+.btnContainer button {
+    margin: 0rem .2rem;
 }

@@ -41,6 +41,7 @@ export default async function handler(req, res) {
             $set: {
                 contentHtml: newContentHtml,
                 body: req.body.newText,
+                title: req.body.newTitle,
                 author: req.body.newAuthorName,
                 description: req.body.newDescription,
                 lastMod: updateDate

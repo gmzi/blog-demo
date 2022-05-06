@@ -39,7 +39,7 @@
   
   .list {
     list-style: none;
-    padding: 2rem;
+    padding: 0rem;
     margin: 0;
   }
   
@@ -48,19 +48,29 @@
     font-size: smaller;
     font-weight: 300;
     line-height: 1rem;
+    display: flex;
   }
 
-  .listItem a {
-      color: black;
+  .dateContainer {
+    width: 7rem;
+    text-align: right;
+    margin: 0rem 1rem;
+  }
+
+  .titleContainer {
+    width: calc(100% - 7rem);
   }
 
   @media (max-width: 700px){
-    .listItem span {
-        display: block;
+    .list {
+      padding: 1rem;
     }
-  }
-  
-  .lightText {
-    color: #666;
-    font-size: 15px;
+    .listItem {
+      display: block;
+    }
+    .dateContainer {
+      width: 100%;
+      text-align: left;
+      margin: 0rem 0rem 0rem 0rem;
+    }
   }
