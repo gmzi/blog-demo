@@ -61,7 +61,6 @@ margin-right: .2rem;
   --color-btnDelete: red;
   --color-btnDelete-border: 1px solid rgba(250, 100, 100, 0.681);
   --color-btnDelete-background: rgba(217, 226, 99, 0.2);
-  --color-btnStartOver: black;
   --color-btnDownload-border: 1px solid rgba(0, 0, 255, 0.377);
   --color-logoTitle: rgba(0, 0, 0, 0.922);
   --color-logoTitle-text-decoration: underline 1px solid #0000ff86;
@@ -105,7 +104,6 @@ margin-right: .2rem;
   --color-btnDelete: rgb(255, 89, 89);
   --color-btnDelete-border: 1px solid rgba(245, 151, 151, 0.681);
   --color-btnDelete-background: rgba(220, 225, 153, 0.2);
-  --color-btnStartOver: rgb(159, 159, 159);
   --color-btnDownload-border: 1px solid rgba(163, 163, 251, 0.377);
   --color-logoTitle: rgba(216, 212, 212, 0.922);
   --color-logoTitle-text-decoration: underline 1px solid #B798FF;
@@ -189,6 +187,10 @@ article pre {
 
 span circle {
   fill: var(--color-fill-circle)
+}
+
+a span {
+  line-height: 1.2;
 }
 
 .postDate {
@@ -285,10 +287,6 @@ button:active {
 
 .btnDelete:hover {
   background-color: var(--color-btnDelete-background);
-}
-
-.btnStartOver {
-  color: var(--color-btnStartOver)
 }
 
 .btnDownload {

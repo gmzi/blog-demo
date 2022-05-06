@@ -13,10 +13,6 @@ export default function Restricted() {
                     <title>{data.title} - login</title>
                 </Head>
                 <Header />
-                {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                    <h1>This is a restricted area</h1>
-                    <p className={styles.p}>Please sign in to continue, or just go back home</p>
-                </section> */}
             </Layout>
         </>
     )

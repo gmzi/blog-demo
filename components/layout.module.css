@@ -19,18 +19,17 @@
   max-width: 36rem;
   margin: 2rem auto 2rem;
   padding: 1rem 0rem;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .main {
   min-height: calc(100vh - 10rem);
+  margin: 1rem 0rem;
+  padding: 0; 
 }
 
 .footer {
   display: flex;
   padding: 0.5rem 0;
-  margin-top: 2rem;
   border-radius: 5px;
   justify-content: center;
   align-items: center;

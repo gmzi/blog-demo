@@ -3,11 +3,8 @@
   width: 100%;
   margin: 0px 0px;
   padding: 0px 0px;
-
-  /* --stripe: #cfd8dc;
-  --bg: #e1e1e1; */
-  --stripe: #cfd8dc4b;
-  --bg: #e1e1e144;
+  --stripe: #cfd8dc23;
+  --bg: var(--color-bg-def);
   background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
     linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
     linear-gradient(315deg, var(--bg) 25%, transparent 25%),
@@ -16,25 +13,23 @@
   background-color: var(--stripe);
 }
 
-/* --------------------------------------------- */
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  border: 1px solid blue;
-  background-color: rgb(253, 255, 255);
-  padding: 0rem 0.15rem;
+  border-radius: 5px;
+  border: var(--color-border);
+  background-color: var(--color-bg-header);
+  margin: 1rem 0rem;
 }
 
-.container h4 {
-  margin: 0rem 0rem;
+.boxHeading {
+  margin: .2rem 0rem;
 }
 
-.container p {
-  margin: 0.1rem 0.5rem;
+.container p, 
+.container code {
   font-size: medium;
 }
 
@@ -42,68 +37,15 @@
   margin: 0.5rem 0rem;
 }
 
-/* --------------------------------------------- */
-
-.msgContainer {
-  background-color: rgba(182, 178, 178, 0.438);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.articleContainer, 
+.metadataContainer {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-bg-def);
 }
 
 .articleContainer {
-  padding: 10px 10px;
-  background-color: white;
-  border-top: 1px solid rgb(194, 190, 190);
-  height: 100vh;
-  width: 98%;
+  height: 40vh;
+  resize: vertical;
   overflow-y: scroll;
-  border-radius: 10px;
-}
-
-.list {
-  list-style: none;
-  border-radius: 10px;
-  padding: 2rem 1rem;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid green;
-}
-
-.listItem {
-  font-weight: 200;
-  line-height: 1rem;
-}
-
-.listItem a {
-  color: black;
-}
-
-.btnContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  padding: 1rem 1rem;
-  border-radius: 10px;
-  border: 1px solid red;
-}
-
-.btnContainer label {
-  font-weight: 300;
-}
-
-@media (max-width: 700px) {
-  .listItem span {
-    display: block;
-  }
-}
-
-.lightText {
-  color: #666;
-  font-size: 15px;
 }

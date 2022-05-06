@@ -115,15 +115,17 @@
         },
         "previewPost": {
             "refreshIndex": "refrescar página de inicio",
-            "preview": "BORRADOR: ",
-            "thisIs": "este es el borrador de tu post",
+            "preview": "Borrador",
+            "thisIs": "este es el texto de tu post",
+            "thisIsMeta": "esta es la metadata",
             "promptPublish": "Todo bien?",
             "publish": "PUBLICAR",
             "promptStartOver": "Necesita edición?",
             "startOver": "EMPEZAR DE NUEVO",
-            "indexEntry": "Así se ve en el índice:",
+            "indexEntry": "Así seve en el índice",
             "by": "por",
-            "description": "descripción"
+            "description": "descripción",
+            "author": "autor"
         },
         "theme": {
             "dark": "oscuro",
@@ -247,15 +249,17 @@
         },
         "previewPost": {
             "refreshIndex": "refresh index page",
-            "preview": "PREVIEW: ",
-            "thisIs": "this is a preview of your post",
+            "preview": "Preview",
+            "thisIs": "this is the text of your post",
+            "thisIsMeta": "this is the metadata",
             "promptPublish": "Looking good?",
             "publish": "PUBLISH",
             "promptStartOver": "Need some edit?",
             "startOver": "START OVER",
-            "indexEntry": "Index entry:",
+            "indexEntry": "Index entry",
             "by": "by",
-            "description": "description"
+            "description": "description",
+            "author": "author"
         },
         "theme": {
             "dark": "dark",

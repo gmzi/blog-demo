@@ -109,8 +109,6 @@ export default function Layout({ children, home, post, dashboard }) {
                 
                 {mounted && (
                 <button className="buttonTheme" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-                    {/* {theme === 'light' ? <span>&#x263E;</span> : <span>&#x2600;</span>} */}
-                    {/* {theme === 'light' ? `${text.theme.dark}` : `${text.theme.light}`} */}
                     {theme === 'light' ? (
                         <svg
                         height="100%" 

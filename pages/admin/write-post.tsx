@@ -140,10 +140,10 @@ export default function WritePost() {
 
         return (
             <Layout home dashboard>
-                <Header />
                 <Head>
                     <title>{data.title} - {text.writePost.writePost}</title>
                 </Head>
+                <Header />
                 <section>
                     <h2>{text.writePost.newPost}</h2>
                         {!published ? (
