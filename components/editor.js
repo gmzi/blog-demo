@@ -22,7 +22,7 @@ export default function Editor({ postBody, handleData }) {
     const router = useRouter()
     const [unsavedChanges, setUnsavedChanges] = useState();
     const [mounted, setMounted] = useState(false)
-    const {theme} = useTheme()
+    const {resolvedTheme} = useTheme()
 
     useEffect(() => setValue(postBody), [postBody])
 
@@ -64,7 +64,7 @@ export default function Editor({ postBody, handleData }) {
     }
 
     return (
-        <div data-color-mode={theme}>
+        <div data-color-mode={resolvedTheme}>
             <MDEditor 
             className="editor"
             value={value} 
