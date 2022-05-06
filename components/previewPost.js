@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from "next/head";
+import Header from './header';
 import Layout, { siteTitle } from "./layout";
 import styles from './previewPost.module.css'
 import utilStyles from '../styles/utils.module.css'
@@ -7,9 +8,6 @@ import dashboardStyles from '../styles/dashboard.module.css'
 import Alert from './alert';
 import PostComponent from './postComponent';
 import { text } from '../lib/data'
-
-// import { parseMdToHtml } from "../lib/posts";
-
 
 export default function PreviewPost({ post, publish, restart, publishStatus }) {
 
@@ -47,36 +45,56 @@ export default function PreviewPost({ post, publish, restart, publishStatus }) {
 
     return (
         <section className={styles.section}>
-            <Layout dashboard home>
+            <Layout home dashboard>
                 <Head>
-                    <title>{text.previewPost.preview} {post.title}</title>
+                    <title>{text.previewPost.preview}: {post.title}</title>
                 </Head>
-                <div className={styles.container}>
-                    <h3>{text.previewPost.thisIs}:</h3>
-                    <div className={styles.articleContainer}>
-                        <PostComponent post={post} />
+                <Header/>
+                    <h2>{text.previewPost.preview}</h2>
+                    <div className={styles.container}>
+                        <h3 className={styles.boxHeading}>{text.previewPost.thisIs}</h3>
+                        <div className={styles.articleContainer}>
+                            <PostComponent post={post} />
+                        </div>
                     </div>
-                </div>
-                <ul className={styles.list}>
-                    <li className={utilStyles.headingSm}>{text.previewPost.indexEntry}</li>
-                    <li className={styles.listItem}><span>{post.title}</span><span className={styles.lightText}> {text.previewPost.by} {post.author}</span></li>
-                    {post.description &&
-                        <>
-                            <li className={utilStyles.headingSm}>{text.previewPost.description}: </li>
-                            <li className={styles.listItem}><span>{post.description}</span></li>
-                        </>
-                    }
-                </ul>
-                <div className={styles.btnContainer}>
-                    <label htmlFor="btn-publish">{text.previewPost.promptPublish}</label>
-                    <button className={`${dashboardStyles.button} ${dashboardStyles.buttonPublish}`} onClick={handlePublish} name="btn-publish">{text.previewPost.publish}</button>
-                    <label htmlFor="btn-restart">{text.previewPost.promptStartOver}</label>
-                    <button className={`${dashboardStyles.button} ${dashboardStyles.buttonStartOver}`} onClick={handleRestart} name="btn-restart">{text.previewPost.startOver}</button>
-                </div>
-                {/* <div className={styles.articleContainer}>
-                    <PostComponent post={post} />
-                </div> */}
-            </Layout >
+
+                    <div className={styles.container}>
+                        <h3 className={styles.boxHeading}>{text.previewPost.thisIsMeta}:</h3>
+                        <div className={styles.metadataContainer}>
+                            <ul className={utilStyles.list}>
+                                <li className={utilStyles.listItem}>
+                                    <div className={utilStyles.dateContainer}>
+                                        <span className="postDate">{text.previewPost.indexEntry}: </span>
+                                    </div>
+                                    <div className={utilStyles.titleContainer}>
+                                        <a><span>{post.title}</span></a>
+                                    </div>
+                                </li>
+                                <li className={utilStyles.listItem}>
+                                    <div className={utilStyles.dateContainer}>
+                                        <span className="postDate">{text.previewPost.description}: </span>
+                                    </div>
+                                    <div className={utilStyles.titleContainer}>
+                                        <a><span>{post.description}</span></a>
+                                    </div>
+                                </li>
+                                <li className={utilStyles.listItem}>
+                                    <div className={utilStyles.dateContainer}>
+                                        <span className="postDate">{text.previewPost.author}: </span>
+                                    </div>
+                                    <div className={utilStyles.titleContainer}>
+                                        <a><span>{post.author}</span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={dashboardStyles.btnContainer}>
+                        <button className="btnPublish" onClick={handlePublish} name="btn-publish">{text.previewPost.publish}</button>
+                        <button className="btnDelete" onClick={handleRestart} name="btn-restart">{text.previewPost.startOver}</button>
+                    </div>
+            </Layout>
         </section>
     )
 }

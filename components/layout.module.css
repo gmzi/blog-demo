@@ -1,9 +1,7 @@
 .nav {
-  /* max-width: 70rem; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid rgb(217, 217, 233);
   margin: 0rem;
 }
 
@@ -19,18 +17,20 @@
 
 .container {
   max-width: 36rem;
-  margin: 2rem auto 1rem;
+  margin: 2rem auto 2rem;
   padding: 1rem 0rem;
 }
 
 .main {
   min-height: calc(100vh - 10rem);
+  margin: 0rem 0rem;
+  padding: 1rem 0rem; 
 }
 
 .footer {
   display: flex;
   padding: 0.5rem 0;
-  border-top: 1px solid #eaeaea;
+  border-radius: 5px;
   justify-content: center;
   align-items: center;
   font-weight: 210;
@@ -69,3 +69,4 @@
 .backToHome {
   margin: 1.5rem 0 0;
 }
+

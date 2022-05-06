@@ -7,7 +7,7 @@
             "signInAs": "ingresar como editor",
             "signIn": "ingresar",
             "signedInAs": "logueado como",
-            "editor": "editor",
+            "editor": "como editor",
             "signOut": "salir"
         },
         "auth": {
@@ -62,11 +62,11 @@
         "editor": {
             "loading": "Cargando el editor...",
             "saveChanges": "Guardar cambios",
-            "youHaveUnsaved": "Tienes cambios sin guardar, seguro que quieres salir de esta página?"
+            "youHaveUnpublished": "Tienes cambios sin publicar, seguro que quieres salir de esta página?"
         },
         "editPost": {
-            "editPost": "editar post",
-            "refreshIndex": "refrescar index",
+            "editPost": "Editar Post",
+            "refreshIndex": "Eefrescar Pndex",
             "noModifications": "no hay cambios",
             "changesHaveBeenSaved": "cambios guardados",
             "savingChanges": "guardando los cambios... "
@@ -94,7 +94,7 @@
             "template": "ejemplo de sintaxis",
             "myImage": "mi-imagen",
             "myVideo": "Título del video",
-            "cheatSheet": "Guía de sintaxis para archivos Markdown",
+            "cheatSheet": "Ver guía de sintaxis para archivos Markdown",
             "downloadSample": "Descarga un archivo .md de muestra",
             "authorName": "nombre del autor",
             "authorPlaceholder": "tal como será mostrado en público",
@@ -110,19 +110,26 @@
             "titleDuplicate": "Ya tienes un post con el mismo título, por favor edita tu archivo y adjúntalo de nuevo",
             "errorFormatting": "Error formateando datos, por favor revisa tu archivo e inténtalo de nuevo",
             "postPublished": "Post publicado, felicitaciones!!!!",
-            "failedPublishing": "Error al intentar publicar, por favor edita tu archivo e intenta de nuevo"
+            "failedPublishing": "Error al intentar publicar, por favor edita tu archivo e intenta de nuevo",
+            "here": "aqui"
         },
         "previewPost": {
             "refreshIndex": "refrescar página de inicio",
-            "preview": "BORRADOR: ",
-            "thisIs": "este es el borrador de tu post",
+            "preview": "Borrador",
+            "thisIs": "este es el texto de tu post",
+            "thisIsMeta": "esta es la metadata",
             "promptPublish": "Todo bien?",
             "publish": "PUBLICAR",
             "promptStartOver": "Necesita edición?",
             "startOver": "EMPEZAR DE NUEVO",
-            "indexEntry": "Así se ve en el índice:",
+            "indexEntry": "Así seve en el índice",
             "by": "por",
-            "description": "descripción"
+            "description": "descripción",
+            "author": "autor"
+        },
+        "theme": {
+            "dark": "oscuro",
+            "light": "claro"
         }
     },
     "EN": {
@@ -130,10 +137,10 @@
             "by": "by"
         },
         "header": {
-            "signInAs": "sign in as editor",
+            "signInAs": "sign in",
             "signIn": "sign in",
             "signedInAs": "signed in as",
-            "editor": "editor",
+            "editor": "as editor",
             "signOut": "sign out"
         },
         "auth": {
@@ -188,10 +195,10 @@
         "editor": {
             "loading": "Loading editor...",
             "saveChanges": "Save changes",
-            "youHaveUnsaved": "You have unsaved changes, are you sure you want to leave this page?"
+            "youHaveUnpublished": "You have unpublished changes, are you sure you want to leave this page?"
         },
         "editPost": {
-            "editPost": "edit post",
+            "editPost": "Edit Post",
             "refreshIndex": "refresh index page",
             "noModifications": "no modifications made",
             "changesHaveBeenSaved": "changes have been saved",
@@ -220,7 +227,7 @@
             "template": "syntax template",
             "myImage": "my-image",
             "myVideo": "My video title",
-            "cheatSheet": "Markdown syntax reference",
+            "cheatSheet": "Check Markdown syntax reference",
             "downloadSample": "Download sample .md file",
             "authorName": "author name",
             "authorPlaceholder": "author name as it will be publicly displayed",
@@ -236,19 +243,27 @@
             "titleDuplicate": "The title of your post already exists, please edit your attached file and try again",
             "errorFormatting": "Error formatting data, please check guidelines and try again",
             "postPublished": "Post published, congratulations!!!!",
-            "failedPublishing": "Failed publishing, please edit file and try again"
+            "failedPublishing": "Failed publishing, please edit file and try again",
+            "here": "here",
+            "title": "title"
         },
         "previewPost": {
             "refreshIndex": "refresh index page",
-            "preview": "PREVIEW: ",
-            "thisIs": "this is a preview of your post",
+            "preview": "Preview",
+            "thisIs": "this is the text of your post",
+            "thisIsMeta": "this is the metadata",
             "promptPublish": "Looking good?",
             "publish": "PUBLISH",
             "promptStartOver": "Need some edit?",
             "startOver": "START OVER",
-            "indexEntry": "Index entry:",
+            "indexEntry": "Index entry",
             "by": "by",
-            "description": "description"
+            "description": "description",
+            "author": "author"
+        },
+        "theme": {
+            "dark": "dark",
+            "light": "light"
         }
     }
 }
