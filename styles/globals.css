@@ -37,6 +37,7 @@ margin-right: .2rem;
   --color-article-def: #181818e6;
   --color-bg-header: whitesmoke;
   --color-bg-snippets: rgba(26, 0, 0, 0.897);
+  --color-font-snippets: whitesmoke;
   --color-fill-circle: rgba(0, 0, 0, 0.744);
   --color-date-def: rgb(140, 140, 140);
   --color-hover: underline 3px solid #0000ffc9;
@@ -80,6 +81,7 @@ margin-right: .2rem;
   --color-article-def: #eaeaeae6;
   --color-bg-header: rgba(245, 245, 245, 0.147);
   --color-bg-snippets: rgba(140, 139, 139, 0.215);
+  --color-font-snippets: rgb(218, 218, 218);
   --color-fill-circle: rgba(255, 255, 255, 0.787);
   --color-date-def: rgb(140, 140, 140);
   --color-hover: underline 3px solid #B798FF;
@@ -181,6 +183,7 @@ article {
 ol ul, 
 article pre {
   background-color: var(--color-bg-snippets);
+  color: var(--color-font-snippets);
   border-radius: 5px;
   padding: 1.5rem;
 }
