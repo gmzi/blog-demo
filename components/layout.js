@@ -46,7 +46,7 @@ export default function Layout({ children, home, post, dashboard }) {
         lastMod: '',
         ...post
     }
-    
+
     return (
         <div className={styles.mainContainer}> 
             <Head>
@@ -83,7 +83,7 @@ export default function Layout({ children, home, post, dashboard }) {
                 }
                 <meta name="twitter:title" content={render.title} />
                 <meta name="twitter:description" content={render.description} />
-                <meta name="twitter:image" content={render.ogImage} />
+                <meta name="twitter:image" content={`${BASE_URL}/api/og?title=${render.title}`} />
                 {/*Other meta tags  */}
                 <meta httpEquiv='Content-Language' content={render.language} />
                 <link rel="icon" href="/favicon.ico" />
