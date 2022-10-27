@@ -2,6 +2,9 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 import React from 'react';
+import {favicon} from '../../public/favicon'
+
+const BASE_URL = process.env.NEXT_PUBLIC_URL;
 
 export const config = {
   runtime: 'experimental-edge',
@@ -17,13 +20,11 @@ export default function handler(req: NextRequest) {
       ? searchParams.get('title')?.slice(0, 100)
       : 'My default title';
 
-    console.log(title)
-
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundColor: 'black',
+            backgroundColor: 'white',
             backgroundSize: '150px 150px',
             height: '100%',
             width: '100%',
@@ -46,8 +47,9 @@ export default function handler(req: NextRequest) {
             <img
               alt="Vercel"
               height={200}
-              src="data:image/svg+xml,%3Csvg width='116' height='100' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M57.5 0L115 100H0L57.5 0z' /%3E%3C/svg%3E"
-              style={{ margin: '0 30px' }}
+            //   src="data:image/svg+xml,%3Csvg width='116' height='100' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M57.5 0L115 100H0L57.5 0z' /%3E%3C/svg%3E"
+              src={`${BASE_URL}/og-image.png`}
+              style={{ margin: '0 30px', borderRadius: '5px' }}
               width={232}
             />
           </div>
@@ -56,7 +58,7 @@ export default function handler(req: NextRequest) {
               fontSize: 60,
               fontStyle: 'normal',
               letterSpacing: '-0.025em',
-              color: 'white',
+              color: 'black',
               marginTop: 30,
               padding: '0 120px',
               lineHeight: 1.4,

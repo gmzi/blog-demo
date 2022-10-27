@@ -40,13 +40,13 @@ export default function Layout({ children, home, post, dashboard }) {
         title: data.title,
         description: data.description,
         type: type,
-        author: null,
+        author: "gmzi",
         fileName: '',
         date: '',
         lastMod: '',
         ...post
     }
-
+    
     return (
         <div className={styles.mainContainer}> 
             <Head>
@@ -64,14 +64,17 @@ export default function Layout({ children, home, post, dashboard }) {
                     <meta property="article:author" content={[...render.author]}/>
                     <meta property="article:published_time" content={render.date} />
                     <meta property="article:modified_time" content={render.lastMod} />
+                    <meta property="og:image" content={`${BASE_URL}/api/og?title=${render.title}`} />
                     </>
                 ): (
+                    <>
                     <meta property="og:type" content="website" />
+                    <meta property="og:image" content={render.ogImage} />
+                    </>
                 )}
                 <meta property="og:site_name" content={render.site_name} />
                 <meta property="og:description" content={render.description} />
                 <meta property="og:title" content={render.title} />
-                <meta property="og:image" content={render.ogImage} />
                 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
