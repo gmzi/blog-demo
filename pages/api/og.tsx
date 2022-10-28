@@ -2,7 +2,6 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 import React from 'react';
-import logo from '../../components/logo'
 
 const BASE_URL = process.env.NEXT_PUBLIC_URL;
 

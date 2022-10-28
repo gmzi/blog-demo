@@ -85,7 +85,8 @@ export default function AddPostForm() {
         }
 
         const postData = await response.json();
-        const newData = postData.newPost
+        const parseData = JSON.parse(postData)
+        const newData = parseData.newPost
         setNewPost(newData)
         setPreview(true)
     }

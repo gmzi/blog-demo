@@ -10,6 +10,7 @@ import Restricted from "../../components/restricted";
 import { text } from '../../lib/data'
 import styles from '../../styles/dashboard.module.css'
 import Editor from "../../components/editor";
+import React from "react";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const SAVE_TOKEN = process.env.NEXT_PUBLIC_SAVE_TOKEN;
@@ -109,7 +110,8 @@ export default function WritePost() {
         }
 
         const postData = await format.json()
-        const newPost = postData.newPost
+        const parsePost = JSON.parse(postData)
+        const newPost = parsePost.newPost
 
         setStatus({ alert: "messageAlert", message: `${text.writePost.publishing}` })
 
