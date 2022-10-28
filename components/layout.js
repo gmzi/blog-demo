@@ -46,9 +46,7 @@ export default function Layout({ children, home, post, dashboard }) {
         lastMod: '',
         ...post
     }
-
-    console.log(`${BASE_URL}/og-image.png`)
-
+    
     return (
         <div className={styles.mainContainer}> 
             <Head>
